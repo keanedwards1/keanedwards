@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Changed title to reflect your name and portfolio -->
+    <title>Kean Edwards Portfolio</title>
+    <!-- Link to your refined CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <!-- AOS Library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body class="home">
+    <!-- Loader Animation (remains as before, with session storage logic if needed) -->
+    <div class="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- Header with modern micro-interactions -->
+    <header class="header">
+        <nav class="nav">
+            <a href="/index.html" class="logo-link">
+                <!-- Your logo now reflects your name -->
+                <div class="logo">Kean Edwards</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="/html/contact.html">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Particle Background Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero content-section" data-aos="fade-up">
+        <div class="hero-content">
+            <!-- Changed hero title to better represent your craft -->
+            <h1 class="hero-title">Crafting Digital Experiences</h1>
+            <!-- Updated subtitle to highlight your technologies and expertise -->
+            <p class="hero-subtitle">
+                Building high-performance web applications with HTML, CSS, JavaScript, React, and Node.js.
+                Expert in serverless hosting, SEO, and analytics integration.
+            </p>
+            <!-- Changed button text -->
+            <a href="#about" class="btn">Learn More About Me</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about content-section" data-aos="fade-up">
+        <div class="container">
+            <!-- Changed section title -->
+            <h2 class="section-title">About Me</h2>
+            <p class="section-text">
+                I'm Kean Edwards, a passionate developer who specializes in building robust applications using HTML, CSS, and JavaScript.
+                I have extensive experience with React and Node.js, and I deploy my projects using serverless platforms like Vercel and GitHub.
+                My background also includes working with SQLite databases, as well as developing and cloning custom sites on Squarespace and WordPress.
+                I’m dedicated to integrating Google Analytics and implementing high-quality SEO to help your business shine online.
+            </p>
+            <!-- Added new paragraph about branding, image selection, and photography -->
+            <p class="section-text">
+                I also specialize in branding websites to capture each client's personal feel. With expert image selection, advanced Photoshop proficiency, and over 10 years of photography experience, I craft visual identities that truly resonate.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services content-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Web Application Development</h3>
+                    <p>Responsive and dynamic web apps built with HTML, CSS, JavaScript, React, and Node.js.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Serverless Deployment & Hosting</h3>
+                    <p>Seamless deployment on Vercel and GitHub, leveraging modern serverless architectures.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>SEO & Analytics Integration</h3>
+                    <p>Boost your online presence with expert SEO strategies and comprehensive Google Analytics setups.</p>
+                </div>
+                <!-- Added new service card for Branding & Visual Identity -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Branding & Visual Identity</h3>
+                    <p>Tailored branding solutions with expert image selection, Photoshop editing, and 10 years of photography experience to create your unique visual story.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Projects Section -->
+    <section id="portfolio" class="portfolio content-section" data-aos="fade-up">
+        <div class="container">
+            <!-- Changed section title from 'Our Work' to 'Projects' -->
+            <h2 class="section-title">Projects</h2>
+            <div class="project-grid">
+                <!-- Updated a sample project card to reflect your work -->
+                <div class="project-card" data-aos="zoom-in">
+                    <div class="project-image">
+                        <img src="project1.jpg" alt="Responsive Web App" />
+                    </div>
+                    <div class="project-info">
+                        <h3>Responsive Web App</h3>
+                        <div class="tech-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional project cards can be added similarly -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact content-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <!-- Updated contact text -->
+            <p class="section-text">
+                Interested in collaborating or need a tailored solution? Let's build something amazing together.
+            </p>
+            <!-- For brevity, you can integrate your advanced multi-step contact form here -->
+            <a href="/html/contact.html" class="btn">Contact Me</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Changed footer text to reflect your branding -->
+        <p>&copy; 2025 Kean Edwards. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+    <!-- Particle Animation Script -->
+    <script src="particles.js"></script>
+    <!-- Your main scripts (loader, mobile menu, etc.) -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+    <!-- Loader Animation -->
+    <div class="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/html/projects.html">Work</a></li>
+                <li><a href="/html/contact.html">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Similar header structure as index.html -->
+    <section class="projects projects-section">
+        <h2 class="section-title">Featured Work</h2>
+        <div class="project-grid">
+            <div class="project-card" data-aos="zoom-in">
+                <div class="project-image">
+                    <img src="project1.jpg" alt="Project 1">
+                </div>
+                <div class="project-info">
+                    <h3>E-commerce Platform</h3>
+                    <div class="tech-tags">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+            <!-- More project cards -->
+        </div>
+    </section>
+
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="float-circle circle-1"></div>
+        <div class="float-circle circle-2"></div>
+        <div class="float-circle circle-3"></div>
+    </div>
+
+    <script src="/scripts.js"></script>
+</body>
+
+</html>
