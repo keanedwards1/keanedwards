@@ -11,7 +11,7 @@ if (document.body.classList.contains("home")) {
           });
           // Mark the animation as played for this session
           sessionStorage.setItem("animationPlayed", "true");
-        }, 2000);
+        }, 100);
       });
     } else {
       // If already played, remove the loader immediately on DOM ready
