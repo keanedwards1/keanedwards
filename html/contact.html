@@ -6,15 +6,12 @@
   <title>Your Portfolio - Contact</title>
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="/css/contact.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
-  <!-- Loader Animation (removed immediately on non-home pages) -->
+  <!-- Loader Animation -->
   <div class="loader">
     <div class="loader-circle"></div>
   </div>
@@ -22,9 +19,9 @@
   <!-- Header -->
   <header class="header">
     <nav class="nav">
-        <a href="/index.html" class="logo-link">
-            <div class="logo">Portfolio</div>
-        </a>
+      <a href="/index.html" class="logo-link">
+        <div class="logo">Portfolio</div>
+      </a>
       <ul class="nav-links">
         <li><a href="/index.html">Home</a></li>
         <li><a href="/html/projects.html">Work</a></li>
@@ -38,12 +35,12 @@
     </nav>
   </header>
 
-  <!-- Refined Contact Page with Multi-Step Questionnaire -->
+  <!-- Contact Section -->
   <section class="contact content-section" data-aos="fade-up">
-    <div class="container">
+    <div class="container contact-container">
       <h2 class="section-title">Let's Start Your Project</h2>
       <p class="section-text">
-        Tell us a bit about your project so we can tailor our services to your needs.
+        Tell me a bit about your project so I can tailor my services to your needs.
       </p>
 
       <!-- Multi-Step Questionnaire Form -->
@@ -99,25 +96,23 @@
           </select>
 
           <label for="details">Tell us more about your project</label>
-          <textarea
-            id="details"
-            name="details"
-            placeholder="Describe your project in detail..."
-            rows="5"
-            required
-          ></textarea>
+          <textarea id="details" name="details" placeholder="Describe your project in detail..." rows="5" required></textarea>
 
           <button type="button" class="btn prev-btn">Back</button>
           <button type="submit" class="btn submit-btn">Submit</button>
         </div>
-      </form>
 
-      <!-- Progress Indicator -->
-      <div class="form-progress">
-        <div class="progress-bar" id="progressBar"></div>
-      </div>
+        <!-- Progress Indicator -->
+        <div class="form-progress">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </form>
     </div>
   </section>
+
+  <footer>
+    <p>&copy; 2025 Kean Edwards. All rights reserved.</p>
+  </footer>
 
   <script src="/scripts.js"></script>
   <script>
@@ -148,10 +143,36 @@
       });
     });
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      // Handle form submission (e.g., via AJAX) here.
-      alert('Thank you for your submission! We will be in touch soon.');
+
+      // Gather form data as an object
+      const formData = new FormData(form);
+      const formDataObj = {};
+      formData.forEach((value, key) => {
+        formDataObj[key] = value;
+      });
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formDataObj)
+        });
+        const result = await response.json();
+        if (response.ok) {
+          alert(result.message);
+        } else {
+          alert(result.error || 'An error occurred.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while submitting the form.');
+      }
+
+      // Reset form and steps
       form.reset();
       currentStep = 0;
       updateFormSteps();
@@ -165,13 +186,12 @@
     }
 
     function updateProgressBar() {
-      const progress = ((currentStep) / (formSteps.length - 1)) * 100;
+      const progress = (currentStep / (formSteps.length - 1)) * 100;
       progressBar.style.width = progress + '%';
     }
 
     function validateStep(step) {
-      // For simplicity, we'll assume each step is valid.
-      // You can add more detailed validations by iterating over inputs in formSteps[step].
+      // Basic validation can be added here if needed
       return true;
     }
   </script>
