@@ -22,6 +22,7 @@
     background-color: var(--primary-bg);
     color: var(--text-color);
     overflow-x: hidden;
+    position: relative;
   }
 
   /* Remove default link styling for project cards */
@@ -157,7 +158,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Behind the content */
+    z-index: 0; /* Behind the content */
     pointer-events: none;
   }
   
@@ -257,7 +258,7 @@
   }
   
   .service-card {
-    background: var(--secondary-bg);
+    background: #4747472a;
     border-radius: 10px;
     padding: 2rem;
     width: 300px;
@@ -280,6 +281,7 @@
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     padding: 2rem 0;
+    position: relative;
     z-index: 2 !important;
   }
 
@@ -289,10 +291,11 @@
   }
   
   .project-card {
-    background: var(--secondary-bg);
+    background: #1f1f1f8b;
     border-radius: 15px;
     overflow: hidden;
     transition: transform 4s, box-shadow 4s;
+    position: relative;
     z-index: 2 !important;
   }
   
