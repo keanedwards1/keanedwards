@@ -1,37 +1,37 @@
+// /api/contact.js
 import dotenv from 'dotenv';
-dotenv.config();
+dotenv.config(); // For local development
 
-import faunadb from 'faunadb';
+import { createClient } from '@supabase/supabase-js';
 
-const q = faunadb.query;
-const client = new faunadb.Client({
-  secret: process.env.FAUNADB_SECRET,
-});
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY; // Or SUPABASE_ANON_KEY if you configured your RLS accordingly
 
-console.log('FaunaDB Secret:', process.env.FAUNADB_SECRET); // Add this line to debug
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
     return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
-
+  
   try {
-    const data = req.body;
-
-    // Test query to verify connection
-    const testResult = await client.query(q.Paginate(q.Collections()));
-    console.log('Test query result:', testResult);
-
-    // Save the data into the "contact_submissions" collection
-    const result = await client.query(
-      q.Create(q.Collection('contact_submissions'), { data })
-    );
-
-    return res.status(200).json({ message: 'Data saved successfully!', result });
+    // Ensure the request body is parsed as JSON
+    const data = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+    
+    // Insert data into the "contact_submissions" table
+    const { data: insertedData, error } = await supabase
+      .from('contact_submissions')
+      .insert([{ ...data }]);
+      
+    if (error) {
+      console.error('Supabase error:', error);
+      return res.status(500).json({ error: 'Error inserting data into Supabase' });
+    }
+    
+    return res.status(200).json({ message: 'Data saved successfully!', data: insertedData });
   } catch (error) {
-    console.error('Error saving to FaunaDB:', error.message);
-    console.error(error);
-    return res.status(500).json({ error: 'Error saving data to database' });
+    console.error('Error saving data:', error);
+    return res.status(500).json({ error: 'Error saving data' });
   }
 }
