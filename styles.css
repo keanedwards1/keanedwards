@@ -2,7 +2,9 @@
 :root {
     --primary-bg: #0d0d0d;         /* Deep black for a modern look */
     --secondary-bg: #121212;       /* Slightly lighter dark for cards and sections */
+    --secondary-bg: #131313;
     --accent-color: #00f5ff;        /* Vibrant neon blue */
+    --accent-color: rgba(178, 165, 226, 0.926);
     --text-color: #e0e0e0;          /* Soft off‑white text */
     --transition: all 0.3s ease;
     --container-width: 1200px;
@@ -200,6 +202,7 @@
   .btn:hover {
     transform: translateY(-3px);
     background: #00c0e0; /* Slightly muted on hover */
+    background: rgba(113, 88, 205, 0.926); 
   }
   
   /* --- Sections (About, Services, etc.) --- */
