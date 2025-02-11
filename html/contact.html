@@ -70,7 +70,6 @@
             <option value="branding">Branding</option>
             <option value="other">Other</option>
           </select>
-          
 
           <label for="budget">What is your estimated budget?</label>
           <select id="budget" name="budget" required>
@@ -111,14 +110,37 @@
     </div>
   </section>
 
+  <!-- Toast Container -->
+  <div id="toast-container"></div>
+
   <footer>
     <p>&copy; 2025 Kean Edwards. All rights reserved.</p>
   </footer>
 
   <script src="/scripts.js"></script>
   <script>
-    // Multi-Step Form JavaScript
+    // --- Toast Notification Helper ---
+    function showToast(message, duration = 3000) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.textContent = message;
+      container.appendChild(toast);
 
+      // Force reflow to enable the transition
+      void toast.offsetWidth;
+      toast.classList.add('show');
+
+      // Remove toast after the specified duration plus fade-out time
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+          toast.remove();
+        }, 500);
+      }, duration);
+    }
+
+    // --- Multi-Step Form Logic ---
     const form = document.getElementById('contactForm');
     const formSteps = Array.from(document.querySelectorAll('.form-step'));
     const nextBtns = document.querySelectorAll('.next-btn');
@@ -164,13 +186,13 @@
         });
         const result = await response.json();
         if (response.ok) {
-          alert(result.message);
+          showToast(result.message);
         } else {
-          alert(result.error || 'An error occurred.');
+          showToast(result.error || 'An error occurred.', 5000);
         }
       } catch (error) {
         console.error('Error:', error);
-        alert('An error occurred while submitting the form.');
+        showToast('An error occurred while submitting the form.', 5000);
       }
 
       // Reset form and steps
@@ -192,7 +214,7 @@
     }
 
     function validateStep(step) {
-      // Basic validation can be added here if needed
+      // Add custom validation if needed
       return true;
     }
   </script>

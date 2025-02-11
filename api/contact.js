@@ -5,7 +5,11 @@ dotenv.config(); // For local development
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY; // Or SUPABASE_ANON_KEY if you configured your RLS accordingly
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY; // Or use your anon key if you’ve configured RLS
+
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error('Supabase URL or Key not provided.');
+}
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
