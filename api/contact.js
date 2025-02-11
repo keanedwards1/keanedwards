@@ -33,7 +33,7 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'Error inserting data into Supabase' });
     }
     
-    return res.status(200).json({ message: 'Data saved successfully!', data: insertedData });
+    return res.status(200).json({ message: 'Info Sent!', data: insertedData });
   } catch (error) {
     console.error('Error saving data:', error);
     return res.status(500).json({ error: 'Error saving data' });

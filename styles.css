@@ -5,6 +5,7 @@
     --secondary-bg: #131313;
     --accent-color: #00f5ff;        /* Vibrant neon blue */
     --accent-color: rgba(178, 165, 226, 0.926);
+    --second-accent: #2651a6fb;
     --text-color: #e0e0e0;          /* Soft off‑white text */
     --transition: all 0.3s ease;
     --container-width: 1200px;
@@ -22,6 +23,22 @@
     color: var(--text-color);
     overflow-x: hidden;
   }
+
+  /* Remove default link styling for project cards */
+.project-card {
+  text-decoration: none; /* Removes the default underline */
+  color: inherit; /* Keeps text color consistent */
+}
+
+.project-card:visited {
+  color: inherit; /* Ensures no purple highlighting after clicking */
+}
+
+.project-card:focus,
+.project-card:active {
+  outline: none; /* Removes focus outline */
+}
+
   
   /* --- Loader Animation (unchanged or refined as needed) --- */
   .loader {
@@ -260,22 +277,30 @@
   /* --- Portfolio Section --- */
   .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     padding: 2rem 0;
+    z-index: 2 !important;
+  }
+
+  .archived-projects {
+    text-align: center;
+    margin-top: 4rem;
   }
   
   .project-card {
     background: var(--secondary-bg);
     border-radius: 15px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 4s, box-shadow 4s;
+    z-index: 2 !important;
   }
   
   .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
   }
+
   
   .project-image img {
     width: 100%;
@@ -293,7 +318,7 @@
   }
   
   .tech-tags span {
-    background: var(--accent-color);
+    background: var(--second-accent);
     padding: 0.25rem 0.5rem;
     border-radius: 3px;
     font-size: 0.875rem;
