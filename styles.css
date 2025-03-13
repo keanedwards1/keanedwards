@@ -10,6 +10,11 @@
     --transition: all 0.3s ease;
     --container-width: 1200px;
   }
+
+  a:link {
+    text-decoration: none;
+    color: inherit;
+  }
   
   * {
     margin: 0;
@@ -209,7 +214,7 @@
   .btn {
     display: inline-block;
     background: var(--accent-color);
-    color: var(--primary-bg);
+    color: var(--primary-bg) !important;
     padding: 0.75rem 1.8rem;
     border-radius: 5px;
     text-decoration: none;
@@ -221,8 +226,20 @@
     transform: translateY(-3px);
     background: #00c0e0; /* Slightly muted on hover */
     background: rgba(113, 88, 205, 0.926); 
+    background: rgba(212, 205, 237, 0.926);
+  }
+
+  .start-button {
+    margin-left: 30px;
   }
   
+  @media screen and (max-width: 600px) {
+    .start-button {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+
   /* --- Sections (About, Services, etc.) --- */
   .section-title {
     font-size: 2.8rem;
