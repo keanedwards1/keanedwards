@@ -14,6 +14,9 @@ if (!supabaseUrl || !supabaseKey) {
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default async function handler(req, res) {
+  // 🔥 Dummy read to keep Supabase active
+  await supabase.from('contact_submissions').select('id').limit(1);
+
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
     return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
@@ -31,10 +34,10 @@ export default async function handler(req, res) {
       .from('contact_submissions')
       .insert([{ ...data }]);
       
-  if (error) {
-    console.error('Supabase error:', JSON.stringify(error, null, 2));
-    return res.status(500).json({ error: 'Error inserting data into Supabase' });
-  }
+    if (error) {
+      console.error('Supabase error:', JSON.stringify(error, null, 2));
+      return res.status(500).json({ error: 'Error inserting data into Supabase' });
+    }
     
     return res.status(200).json({ message: 'Info Sent!', data: insertedData });
   } catch (error) {
@@ -42,3 +45,4 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Error saving data' });
   }
 }
+
