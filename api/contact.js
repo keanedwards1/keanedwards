@@ -22,16 +22,19 @@ export default async function handler(req, res) {
   try {
     // Ensure the request body is parsed as JSON
     const data = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+
+    // Debugging: Log the incoming data
+    console.log('Incoming Data:', data);
     
     // Insert data into the "contact_submissions" table
     const { data: insertedData, error } = await supabase
       .from('contact_submissions')
       .insert([{ ...data }]);
       
-    if (error) {
-      console.error('Supabase error:', error);
-      return res.status(500).json({ error: 'Error inserting data into Supabase' });
-    }
+  if (error) {
+    console.error('Supabase error:', JSON.stringify(error, null, 2));
+    return res.status(500).json({ error: 'Error inserting data into Supabase' });
+  }
     
     return res.status(200).json({ message: 'Info Sent!', data: insertedData });
   } catch (error) {
