@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +12,7 @@
   <link rel="icon" type="image/png" href="/images/icon.png">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
+
 <body>
   <!-- Loader Animation -->
   <div class="loader">
@@ -20,24 +22,24 @@
   <!-- Header -->
   <header class="header">
     <nav class="nav">
-        <a href="/index.html" class="logo-link">
-            <!-- Your logo now reflects your name -->
-            <div class="logo">Kean Edwards</div>
-        </a>
-        <ul class="nav-links">
-            <li><a href="/index.html#hero">Home</a></li>
-            <li><a href="/index.html#about">About</a></li>
-            <li><a href="/index.html#services">Services</a></li>
-            <li><a href="/index.html#portfolio">Projects</a></li>
-            <li><a href="/html/contact.html">Contact</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
+      <a href="/index.html" class="logo-link">
+        <!-- Your logo now reflects your name -->
+        <div class="logo">Kean Edwards</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/index.html#hero">Home</a></li>
+        <li><a href="/index.html#about">About</a></li>
+        <li><a href="/index.html#services">Services</a></li>
+        <li><a href="/index.html#portfolio">Projects</a></li>
+        <li><a href="/html/contact.html">Contact</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
     </nav>
-</header>
+  </header>
 
   <!-- Contact Section -->
   <section class="contact content-section" data-aos="fade-up">
@@ -48,7 +50,17 @@
       </p>
 
       <!-- Multi-Step Questionnaire Form -->
-      <form id="contactForm" class="contact-form">
+      <!-- CHANGED: posts directly to FormSubmit instead of /api/contact -->
+      <form id="contactForm" class="contact-form" action="https://formsubmit.co/keanedwards1@gmail.com" method="POST">
+        <!-- ADDED: FormSubmit options -->
+        <input type="hidden" name="_subject" value="New portfolio inquiry (keanedwards)" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="true" />
+        <input type="hidden" name="_next" value="https://keanedwards.vercel.app/html/thanks.html" />
+
+        <!-- ADDED: sets Reply-To to the visitor email (we fill this in with JS right before submit) -->
+        <input type="hidden" id="replyto" name="_replyto" value="" />
+
         <!-- Step 1: Basic Information -->
         <div class="form-step form-step-active" data-step="1">
           <label for="name">Your Name</label>
@@ -100,7 +112,8 @@
           </select>
 
           <label for="details">Tell us more about your project</label>
-          <textarea id="details" name="details" placeholder="Describe your project in detail..." rows="5" required></textarea>
+          <textarea id="details" name="details" placeholder="Describe your project in detail..." rows="5"
+            required></textarea>
 
           <button type="button" class="btn prev-btn">Back</button>
           <button type="submit" class="btn submit-btn">Submit</button>
@@ -119,7 +132,8 @@
 
   <footer>
     <p>&copy; 2025 Kean Edwards. All rights reserved.</p>
-    <p style="margin-top: 10px;"><a href="mailto:keanedwards1@gmail.com">keanedwards1@gmail.com</a> | <a href="tel:4159302468">415-930-2468</a> </p>
+    <p style="margin-top: 10px;"><a href="mailto:keanedwards1@gmail.com">keanedwards1@gmail.com</a> | <a
+        href="tel:4159302468">415-930-2468</a> </p>
   </footer>
 
   <script src="/scripts.js"></script>
@@ -171,41 +185,57 @@
       });
     });
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      // Gather form data as an object
-      const formData = new FormData(form);
-      const formDataObj = {};
-      formData.forEach((value, key) => {
-        formDataObj[key] = value;
-      });
-
-      try {
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(formDataObj)
-        });
-        const result = await response.json();
-        if (response.ok) {
-          showToast(result.message);
-        } else {
-          showToast(result.error || 'An error occurred.', 5000);
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        showToast('An error occurred while submitting the form.', 5000);
+    // CHANGED: submit goes to FormSubmit (no fetch, no /api/contact)
+    form.addEventListener('submit', (e) => {
+      // Optional: keep your multi-step UX honest by validating the last step
+      if (!validateStep(currentStep)) {
+        e.preventDefault();
+        return;
       }
 
-      // Reset form and steps
-      form.reset();
-      currentStep = 0;
-      updateFormSteps();
-      updateProgressBar();
+      // ADDED: set Reply-To to the visitor's email so you can reply directly
+      const emailValue = document.getElementById('email')?.value || '';
+      document.getElementById('replyto').value = emailValue;
+
+      // No e.preventDefault() here — let the browser submit the form normally.
     });
+
+
+    /*    form.addEventListener('submit', async (e) => {
+         e.preventDefault();
+   
+         // Gather form data as an object
+         const formData = new FormData(form);
+         const formDataObj = {};
+         formData.forEach((value, key) => {
+           formDataObj[key] = value;
+         });
+   
+         try {
+           const response = await fetch('/api/contact', {
+             method: 'POST',
+             headers: {
+               'Content-Type': 'application/json'
+             },
+             body: JSON.stringify(formDataObj)
+           });
+           const result = await response.json();
+           if (response.ok) {
+             showToast(result.message);
+           } else {
+             showToast(result.error || 'An error occurred.', 5000);
+           }
+         } catch (error) {
+           console.error('Error:', error);
+           showToast('An error occurred while submitting the form.', 5000);
+         }
+   
+         // Reset form and steps
+         form.reset();
+         currentStep = 0;
+         updateFormSteps();
+         updateProgressBar();
+       }); */
 
     function updateFormSteps() {
       formSteps.forEach((step, index) => {
@@ -224,4 +254,5 @@
     }
   </script>
 </body>
+
 </html>
