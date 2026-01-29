@@ -98,6 +98,76 @@
   display: flex;
 }
 
+.form-step {
+  position: relative;
+}
+
+.form-step .btn {
+  align-self: auto; /* CHANGED: stop forcing each button to the right */
+}
+
+/* When a step has multiple buttons (Back + Next/Submit), lay them out nicely */
+.form-step .prev-btn,
+.form-step .next-btn,
+.form-step .submit-btn {
+  width: auto;
+}
+
+/* Create a consistent button row */
+.form-step .prev-btn,
+.form-step .next-btn,
+.form-step .submit-btn {
+  margin-top: 0.25rem;
+}
+
+/* The key: treat the buttons as a row */
+.form-step-active {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-step-active .prev-btn,
+.form-step-active .next-btn,
+.form-step-active .submit-btn {
+  display: inline-flex;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.form-actions .prev-btn {
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--text-color);
+  color: #e0e0e0 !important
+}
+
+.form-actions .prev-btn:hover {
+  background: rgba(113, 88, 205, 0.12);
+}
+
+
+/* intl-tel-input text colors to match your theme */
+.iti,
+.iti * {
+  color: inherit;
+}
+
+.iti__selected-dial-code {
+  color: #3f3d3b; /* use your site’s text color */
+}
+
+.iti__country-list {
+  color: #3f3d3b;
+}
+
+
 /* Progress Indicator */
 .form-progress {
   width: 100%;
