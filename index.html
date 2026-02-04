@@ -10,11 +10,15 @@
     <link rel="stylesheet" href="styles.css" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
     <!-- AOS Library for scroll animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Font Awesome for social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnH2N2O7N9xOq2W3PBlzSmZZhHyWj3iW7N+1KQGtEoZqDZZfPJo7Z3MxT9K+Fvy7sZ3p4tZxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnH2N2O7N9xOq2W3PBlzSmZZhHyWj3iW7N+1KQGtEoZqDZZfPJo7Z3MxT9K+Fvy7sZ3p4tZxA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" href="/images/icon2.png">
 
 </head>
@@ -53,6 +57,12 @@
     <!-- Hero Section -->
     <section id="hero" class="hero content-section" data-aos="fade-up">
         <div class="hero-content">
+                <div class="hero-trust" aria-label="Credibility highlights">
+                <span>Accessibility-first</span>
+                <span>Performance-focused</span>
+                <span>Clear communication</span>
+                <span>Long-term maintainability</span>
+            </div>
             <!-- Changed hero title to better represent your craft -->
             <h1 class="hero-title">Creating Digital Experiences</h1>
             <!-- Updated subtitle to highlight your technologies and expertise -->
@@ -66,22 +76,86 @@
         </div>
     </section>
 
+    <!-- Design Philosophy -->
+    <section class="philosophy content-section">
+        <div class="container philosophy-grid">
+            <div class="philosophy-text">
+                <h2 class="section-title">Design That Feels Considered</h2>
+                <p class="section-text">
+                    I design and build custom websites for businesses, startups, and organizations
+                    that care about clarity, performance, and longevity — not templates or trends
+                    that expire in a year.
+                </p>
+                <p class="section-text muted">
+                    Every project balances visual restraint, thoughtful interaction, and
+                    technical decisions that support long-term growth.
+                </p>
+            </div>
+
+            <div class="philosophy-image">
+                <img src="/images/philosophy.jpg" alt="Thoughtful web design and visual composition" />
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- About Section -->
     <section id="about" class="about content-section" data-aos="fade-up">
         <div class="container">
             <!-- Changed section title -->
             <h2 class="section-title">About Me</h2>
             <p class="section-text">
-              Hi! My name is Kean. I'm a web developer who loves creating user interfaces that are visually clean and nice to interact with. I work with HTML, CSS, JavaScript primarily, utilizing them to their fullest extent.
+                Hi! My name is Kean. I'm a web developer who loves creating user interfaces that are visually clean and
+                nice to interact with. I work with HTML, CSS, JavaScript primarily, utilizing them to their fullest
+                extent.
             </p>
             <p class="section-text">
-              Other technologies I've used in projects: React, Next.js, Node.js, Python, Rust, Vercel.
+                Other technologies I've used in projects: React, Next.js, Node.js, Python, Rust, Vercel.
             </p>
             <p class="section-text">
-              Another one of my passions that I've had since I was 11 years old is photography and Photoshop. I use these skills in almost every website I create.
-            </p>            
+                Another one of my passions that I've had since I was 11 years old is photography and Photoshop. I use
+                these skills in almost every website I create.
+            </p>
         </div>
     </section>
+
+    <!-- How I Work -->
+    <section class="process content-section">
+        <div class="container process-grid">
+            <div class="process-visual">
+                <img src="/images/process.jpg" alt="Design and development workflow" />
+            </div>
+
+            <div class="process-steps">
+                <h2 class="section-title">How I Work</h2>
+                <p class="section-text">
+                    A focused, collaborative process designed to reduce friction
+                    and keep projects moving with intention.
+                </p>
+
+                <div class="process-step">
+                    <span>01</span>
+                    <h3>Discovery & Direction</h3>
+                    <p>We clarify goals, audience, and constraints before a single pixel is placed.</p>
+                </div>
+
+                <div class="process-step">
+                    <span>02</span>
+                    <h3>Design & Build</h3>
+                    <p>Design and development move together — flexible, iterative, and performance-first.</p>
+                </div>
+
+                <div class="process-step">
+                    <span>03</span>
+                    <h3>Launch & Support</h3>
+                    <p>Clean launch, thoughtful handoff, and continued refinement if needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- Services Section -->
     <section id="services" class="services content-section" data-aos="fade-up">
@@ -98,16 +172,42 @@
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <h3>SEO & Analytics Integration</h3>
-                    <p>Good SEO gets your site seen on Google, but it's not automatically setup. we can add this fully if you need.</p>
+                    <p>Good SEO gets your site seen on Google, but it's not automatically setup. we can add this fully
+                        if you need.</p>
                 </div>
                 <!-- Added new service card for Branding & Visual Identity -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <h3>Branding & Visual Identity</h3>
-                    <p>I think the most important aspect of every website is how it looks; is it clean, beautiful, and easy to understand.</p>
+                    <p>I think the most important aspect of every website is how it looks; is it clean, beautiful, and
+                        easy to understand.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Featured Project -->
+    <section class="featured-project content-section">
+        <div class="container featured-grid">
+            <div class="featured-image">
+                <img src="/images/featured-project.jpg" alt="Featured web project" />
+            </div>
+
+            <div class="featured-text">
+                <h2 class="section-title">Featured Project</h2>
+                <p class="section-text">
+                    A custom website built to balance strong visual identity with fast load times
+                    and long-term maintainability.
+                </p>
+                <p class="section-text muted">
+                    From design direction to deployment, this project reflects how I approach
+                    real-world constraints without sacrificing craft.
+                </p>
+
+                <a href="#projects" class="btn">View More Work</a>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Portfolio / Projects Section -->
     <section id="portfolio" class="portfolio content-section" data-aos="fade-up">
@@ -132,7 +232,8 @@
                     </div>
                 </a>
 
-                <a href="https://www.goldenislandmassagesanrafael.com/" target="_blank" class="project-card" data-aos="zoom-in">
+                <a href="https://www.goldenislandmassagesanrafael.com/" target="_blank" class="project-card"
+                    data-aos="zoom-in">
                     <div class="project-image">
                         <img src="/images/project4.png" alt="Marquee Kit - Responsive Web App" />
                     </div>
@@ -189,7 +290,7 @@
             </div>
         </div>
     </section>
-    
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact content-section" data-aos="fade-up">
@@ -197,7 +298,8 @@
             <h2 class="section-title">Get In Touch</h2>
             <!-- Updated contact text -->
             <p class="section-text">
-                Don&apos;t hesitate to send an email or call if you&apos;re interested in having a website built for you.
+                Don&apos;t hesitate to send an email or call if you&apos;re interested in having a website built for
+                you.
             </p>
             <!-- For brevity, you can integrate your advanced multi-step contact form here -->
             <a href="/html/contact.html" class="btn">Contact Me</a>
@@ -208,7 +310,8 @@
     <footer>
         <!-- Changed footer text to reflect your branding -->
         <p>&copy; 2025 Kean Edwards. All rights reserved.</p>
-        <p style="margin-top: 10px;"><a href="mailto:keanedwards1@gmail.com">keanedwards1@gmail.com</a> | <a href="tel:4159302468">415-930-2468</a> </p>
+        <p style="margin-top: 10px;"><a href="mailto:keanedwards1@gmail.com">keanedwards1@gmail.com</a> | <a
+                href="tel:4159302468">415-930-2468</a> </p>
     </footer>
 
     <!-- Scripts -->
@@ -217,7 +320,7 @@
         AOS.init({ duration: 1000, once: true });
     </script>
     <!-- Particle Animation Script -->
-<!--     <script src="particles.js"></script> -->
+    <!--     <script src="particles.js"></script> -->
     <!-- Your main scripts (loader, mobile menu, etc.) -->
     <script src="scripts.js"></script>
 </body>

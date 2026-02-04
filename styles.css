@@ -240,16 +240,18 @@ h3 {
 }
 
 /* --- Content Section Helper --- */
+/* Global section spacing – tightened */
 .content-section {
-  padding-top: 120px;
-  padding-bottom: 80px;
+  padding-top: 90px;
+  padding-bottom: 90px;
 }
+
 
 /* --- Container --- */
 .container {
   width: 90%;
   max-width: var(--container-width);
-  margin: 100px auto;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -306,6 +308,7 @@ h3 {
 .start-button {
   margin-left: 30px;
 }
+
 
 @media screen and (max-width: 600px) {
   .start-button {
@@ -525,3 +528,179 @@ footer {
 .footer-copy {
   font-size: 0.85rem;
 }
+
+/* Process section */
+.process {
+  background: var(--surface-2);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+  text-align: left;
+}
+
+.process-step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.process-number {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.process-step h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.process-step p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.hero-trust {
+  margin-bottom: 1.25rem; /* close to buttons */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.25rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.hero-trust span {
+  position: relative;
+  padding-left: 0.75rem;
+}
+
+.hero-trust span::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  opacity: 0.6;
+}
+
+
+
+/* Philosophy section */
+.philosophy {
+  background: var(--surface-2);
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.philosophy-text {
+  text-align: left;
+}
+
+.philosophy-text .section-text {
+  max-width: 520px;
+}
+
+.philosophy-image img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 900px) {
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Process section */
+.process {
+  background: var(--surface);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.process-visual img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.process-steps {
+  text-align: left;
+}
+
+.process-step {
+  margin-top: 1.5rem;
+}
+
+.process-step span {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.process-step h3 {
+  margin: 0.25rem 0;
+}
+
+.process-step p {
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Featured project */
+.featured-project {
+  background: var(--surface-2);
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.featured-image img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.featured-text {
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
