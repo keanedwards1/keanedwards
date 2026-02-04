@@ -13,7 +13,7 @@ window.addEventListener('resize', () => {
 /* const colors = ['rgba(0,245,255,0.8)', 'rgba(0,200,224,0.8)']; 
  */
 
-const colors = ['rgba(178, 165, 226, 0.8)', 'rgba(178, 180, 226, 0.8)']; 
+const colors = ['rgba(165, 221, 226, 0.8)', 'rgba(201, 130, 25, 0.8)']; 
 
 class Node {
   constructor(angleOffset) {
@@ -46,12 +46,12 @@ function drawConnections() {
   ctx.lineTo(positions[1].x, positions[1].y);
   ctx.lineTo(positions[2].x, positions[2].y);
   ctx.closePath();
-  ctx.strokeStyle = 'rgba(72, 37, 201, 0.3)';
+  ctx.strokeStyle = 'rgba(37, 201, 149, 0.3)';
   ctx.lineWidth = 2;
   ctx.stroke();
 
   // Soft fill for a membrane effect
-  ctx.fillStyle = 'rgba(110, 94, 168, 0.1)'; /* rgba(0,200,224,0.1) */
+  ctx.fillStyle = 'rgba(94, 168, 94, 0.1)'; /* rgba(0,200,224,0.1) */
   ctx.fill();
 }
 

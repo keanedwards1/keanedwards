@@ -1,93 +1,106 @@
-/* --- New styles to prevent header overlap and refine contact design --- */
+/* =========================================================
+   contact.css — matches styles.css “Bone + Charcoal + Faded Blue”
+   ========================================================= */
 
-/* Helper class to push non-hero sections down */
+/* Contact section spacing (header is fixed) */
 .content-section {
-  padding-top: 120px; /* Adjust this value to match your header's height */
+  padding-top: 120px;
   padding-bottom: 80px;
 }
 
-/* Refined Contact Page Design */
+/* Contact page layout */
 .contact {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 5%;
+  padding: 2.5rem 5%;
 }
 
-/* .contact-container {
-  margin-bottom: 10px;
-} */
+/* Ensure container doesn't inherit old centering assumptions */
+.contact .container {
+  margin: 0 auto;
+  text-align: center;
+}
 
+/* Title + intro */
 .contact .section-title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--accent-color);
+  font-size: clamp(2.1rem, 3.6vw, 3rem);
+  margin-bottom: 0.75rem;
+  color: var(--text);
 }
 
 .contact .section-text {
-  font-size: 1.125rem;
+  font-size: 1.06rem;
   margin-bottom: 2rem;
   text-align: center;
-  max-width: 600px;
+  max-width: 58ch;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--muted);
 }
 
-/* Multi-Step Form Styling */
-/* Multi-Step Form Styling */
+/* =========================================================
+   Form card
+   ========================================================= */
 .contact-form {
-  background: var(--secondary-bg);
-  padding: 2rem;
-  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 1.75rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 540px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  color: var(--text-color);
-  margin: 0 auto; /* <-- Added to center the form horizontally */
+  color: var(--text);
+  margin: 0 auto;
 }
 
+/* Labels */
 .contact-form label {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text);
 }
 
+/* Inputs */
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
-  background: transparent;
-  border: 2px solid var(--accent-color);
-  padding: 0.75rem;
-  border-radius: 5px;
-  color: var(--text-color);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 0.85rem 0.9rem;
+  border-radius: 12px;
+  color: var(--text);
   font-size: 1rem;
   width: 100%;
+  transition: border-color var(--transition), box-shadow var(--transition);
 }
 
+.contact-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(31, 31, 31, 0.45);
+}
+
+/* Focus ring */
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: var(--accent-color);
-  box-shadow: 0 0 5px var(--accent-color);
+  border-color: rgba(107, 124, 147, 0.55); /* faded blue focus */
+  box-shadow: 0 0 0 4px rgba(107, 124, 147, 0.18);
 }
 
-.contact-form button {
-  background: var(--accent-color);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  color: var(--primary-bg);
-  font-size: 1rem;
-  cursor: pointer;
-  transition: var(--transition);
-  align-self: flex-end;
-}
-
-.contact-form button:hover {
-  background: rgba(113, 88, 205, 0.926); /* slightly darker shade of the accent color */
-}
-
-/* Multi-Step Form Steps */
+/* =========================================================
+   Multi-step visibility
+   ========================================================= */
 .form-step {
   display: none;
   flex-direction: column;
@@ -98,41 +111,16 @@
   display: flex;
 }
 
-.form-step {
-  position: relative;
-}
+/* =========================================================
+   Buttons — align with your global .btn, but keep layout sane
+   ========================================================= */
 
+/* Step 1 "Next" uses .btn directly, keep it from stretching weirdly */
 .form-step .btn {
-  align-self: auto; /* CHANGED: stop forcing each button to the right */
+  align-self: flex-end;
 }
 
-/* When a step has multiple buttons (Back + Next/Submit), lay them out nicely */
-.form-step .prev-btn,
-.form-step .next-btn,
-.form-step .submit-btn {
-  width: auto;
-}
-
-/* Create a consistent button row */
-.form-step .prev-btn,
-.form-step .next-btn,
-.form-step .submit-btn {
-  margin-top: 0.25rem;
-}
-
-/* The key: treat the buttons as a row */
-.form-step-active {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.form-step-active .prev-btn,
-.form-step-active .next-btn,
-.form-step-active .submit-btn {
-  display: inline-flex;
-}
-
+/* Button row for steps with Back + Next/Submit */
 .form-actions {
   display: flex;
   gap: 0.75rem;
@@ -141,71 +129,136 @@
   margin-top: 0.25rem;
 }
 
+/* Make sure .btn doesn’t look odd inside the form */
+.contact-form .btn {
+  border-radius: 999px;
+  padding: 0.8rem 1.15rem;
+}
+
+/* Back button as “secondary” */
 .form-actions .prev-btn {
-  background: transparent;
-  border: 2px solid var(--accent-color);
-  color: var(--text-color);
-  color: #e0e0e0 !important
+  background: transparent !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: none !important;
 }
 
 .form-actions .prev-btn:hover {
-  background: rgba(113, 88, 205, 0.12);
+  transform: translateY(-1px);
+  background: rgba(107, 124, 147, 0.08) !important;
 }
 
-
-/* intl-tel-input text colors to match your theme */
-.iti,
-.iti * {
-  color: inherit;
-}
-
-.iti__selected-dial-code {
-  color: #3f3d3b; /* use your site’s text color */
-}
-
-.iti__country-list {
-  color: #3f3d3b;
-}
-
-
-/* Progress Indicator */
+/* =========================================================
+   Progress indicator
+   ========================================================= */
 .form-progress {
   width: 100%;
-  background: var(--primary-bg);
-  border-radius: 5px;
+  background: var(--surface-2);
+  border-radius: 999px;
   overflow: hidden;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
+  border: 1px solid var(--border);
 }
 
 .form-progress .progress-bar {
-  height: 5px;
+  height: 8px;
   width: 0%;
-  background: var(--accent-color);
-  transition: width 0.3s;
+  background: var(--accent);
+  transition: width 260ms ease;
+  border-radius: 999px;
 }
 
-    /* Toast Container */
-    #toast-container {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      z-index: 9999;
-    }
-    /* Toast Notification */
-    .toast {
-      background: rgba(50, 50, 50, 0.9);
-      color: #fff;
-      padding: 1rem 1.5rem;
-      margin-bottom: 1rem;
-      border-radius: 5px;
-      font-family: 'Poppins', sans-serif;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      opacity: 0;
-      transform: translateX(100%);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    /* When showing the toast */
-    .toast.show {
-      opacity: 1;
-      transform: translateX(0);
-    }
+/* =========================================================
+   intl-tel-input — make it match the light theme
+   ========================================================= */
+.iti {
+  width: 100%;
+}
+
+.iti__selected-flag {
+  border-radius: 10px 0 0 10px;
+}
+
+/* Country dropdown */
+.iti__country-list {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  color: var(--text);
+}
+
+.iti__country {
+  color: var(--text);
+}
+
+.iti__divider {
+  border-bottom: 1px solid var(--border);
+}
+
+.iti__country.iti__highlight {
+  background: rgba(107, 124, 147, 0.10);
+}
+
+/* Dial code + search */
+.iti__selected-dial-code,
+.iti__search-input {
+  color: var(--text);
+}
+
+/* =========================================================
+   Toasts — refined to match your new aesthetic
+   ========================================================= */
+#toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.toast {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--text);
+  padding: 0.9rem 1.1rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 220ms ease, transform 220ms ease;
+  max-width: 360px;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   Small-screen tweaks
+   ========================================================= */
+@media (max-width: 560px) {
+  .contact-form {
+    padding: 1.25rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+
+  .form-step .btn {
+    align-self: stretch;
+  }
+}
+
+.contact .container.contact-container {
+  margin-top: 64px;
+}
