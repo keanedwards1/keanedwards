@@ -282,13 +282,13 @@
       const field = e.target;
       const raw = field.value;
       const trimmed = raw.trim();
-      
+
       // Auto-trim on blur
       if (raw !== trimmed) field.value = trimmed;
 
       // Strict Regex (Same as validateStep)
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      
+
       // If regex fails OR standard check fails -> Mark Invalid
       if (!emailRegex.test(field.value) || !field.checkValidity()) {
         markInvalid(field);
@@ -325,6 +325,12 @@
         e.preventDefault();
         return;
       }
+
+      const allFields = form.querySelectorAll('input, select, textarea');
+      allFields.forEach(field => {
+        field.disabled = false;
+      });
+      // ============================================================
 
       // Reply-To set to visitor email
       replyToEl.value = emailEl.value || '';
