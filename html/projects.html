@@ -2,68 +2,239 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kean Edwards | Projects</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/css/projects.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="/images/icon2.png" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
-    <!-- Loader Animation -->
-    <div class="loader">
-        <div class="loader-circle"></div>
-    </div>
+  <div class="loader">
+    <div class="loader-circle"></div>
+  </div>
 
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/html/projects.html">Work</a></li>
-                <li><a href="/html/contact.html">Contact</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
-    </header>
+  <header class="header">
+    <nav class="nav">
+      <a href="/index.html" class="logo-link">
+        <div class="logo">Kean Edwards</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/index.html#hero">Home</a></li>
+        <li><a href="/index.html#about">About</a></li>
+        <li><a href="/index.html#services">Services</a></li>
+        <li><a href="/html/projects.html">Projects</a></li>
+        <li><a href="/html/contact.html">Contact</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Similar header structure as index.html -->
-    <section class="projects projects-section">
-        <h2 class="section-title">Featured Work</h2>
-        <div class="project-grid">
-            <div class="project-card" data-aos="zoom-in">
-                <div class="project-image">
-                    <img src="project1.jpg" alt="Project 1">
-                </div>
-                <div class="project-info">
-                    <h3>E-commerce Platform</h3>
-                    <div class="tech-tags">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
-                    </div>
-                </div>
-            </div>
-            <!-- More project cards -->
+  <main>
+    <section class="projects-hero content-section" data-aos="fade-up">
+      <div class="container projects-hero-inner">
+        <p class="eyebrow">Selected Work</p>
+        <h1 class="projects-title">Projects that show clear outcomes, not just nice screens.</h1>
+        <p class="projects-intro">
+          This page is designed for fast scanning: what each project needed, what was built, and what changed after
+          launch. Replace each placeholder with your final screenshots, metrics, and client quotes.
+        </p>
+        <div class="trust-strip" aria-label="Trust signals">
+          <span>Scope clarity</span>
+          <span>Performance-focused builds</span>
+          <span>Zero or minimal downtime migrations</span>
+          <span>Documented process</span>
         </div>
+        <div class="cta-row">
+          <a href="/html/contact.html" class="btn">Start a Project</a>
+          <a href="#featured-case-studies" class="btn btn-secondary">View Featured Projects</a>
+        </div>
+      </div>
     </section>
 
-    <!-- Floating Background Elements -->
-    <div class="floating-elements">
-        <div class="float-circle circle-1"></div>
-        <div class="float-circle circle-2"></div>
-        <div class="float-circle circle-3"></div>
-    </div>
+    <section id="featured-case-studies" class="content-section featured-case-studies" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title">Featured Case Studies</h2>
+        <p class="section-text">
+          Highlight your strongest 2-3 projects here. Keep each one focused on outcomes and include proof where
+          possible.
+        </p>
 
-    <script src="/scripts.js"></script>
+        <article class="case-study" data-aos="fade-up" data-aos-delay="80">
+          <div class="case-study-media">
+            <div class="placeholder-box">
+              <p>Image placeholder</p>
+              <p class="placeholder-sub">Add homepage, dashboard, or product screenshot</p>
+            </div>
+          </div>
+          <div class="case-study-content">
+            <p class="case-label">Featured Project 01</p>
+            <h3>Project Name Placeholder</h3>
+            <p class="case-summary">
+              Add a short summary of the project, the client type, and the core problem you solved.
+            </p>
+
+            <div class="case-scan-grid">
+              <div>
+                <h4>Challenge</h4>
+                <p>Placeholder: What was broken, unclear, or underperforming before your work.</p>
+              </div>
+              <div>
+                <h4>Solution</h4>
+                <p>Placeholder: The exact improvements you designed and built.</p>
+              </div>
+              <div>
+                <h4>Outcome</h4>
+                <p>Placeholder: Add measurable impact, conversion lift, lead volume, speed, or retention.</p>
+              </div>
+            </div>
+
+            <ul class="proof-points">
+              <li>Metric placeholder: +XX% conversion rate</li>
+              <li>Metric placeholder: -XX% load time</li>
+              <li>Metric placeholder: XX new leads in first month</li>
+            </ul>
+
+            <blockquote class="testimonial">
+              “Client testimonial placeholder. Add one result-focused quote from the client here.”
+            </blockquote>
+
+            <div class="case-actions">
+              <a href="/html/contact.html" class="btn">Start a Project</a>
+              <a href="#" class="btn btn-secondary">Live Preview Placeholder</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="case-study" data-aos="fade-up" data-aos-delay="120">
+          <div class="case-study-media">
+            <div class="placeholder-box">
+              <p>Image placeholder</p>
+              <p class="placeholder-sub">Add project walkthrough or before/after screenshot</p>
+            </div>
+          </div>
+          <div class="case-study-content">
+            <p class="case-label">Featured Project 02</p>
+            <h3>Project Name Placeholder</h3>
+            <p class="case-summary">
+              Add a concise description that makes the value proposition obvious in under 2 lines.
+            </p>
+
+            <div class="case-scan-grid">
+              <div>
+                <h4>Challenge</h4>
+                <p>Placeholder challenge details.</p>
+              </div>
+              <div>
+                <h4>Solution</h4>
+                <p>Placeholder solution details.</p>
+              </div>
+              <div>
+                <h4>Outcome</h4>
+                <p>Placeholder outcome details.</p>
+              </div>
+            </div>
+
+            <ul class="proof-points">
+              <li>Proof placeholder: user feedback quote or KPI</li>
+              <li>Proof placeholder: launch timeline and delivery window</li>
+              <li>Proof placeholder: post-launch support details</li>
+            </ul>
+
+            <blockquote class="testimonial">
+              “Testimonial placeholder. Add social proof that speaks to trust and professionalism.”
+            </blockquote>
+
+            <div class="case-actions">
+              <a href="/html/contact.html" class="btn">Start a Project</a>
+              <a href="#" class="btn btn-secondary">Live Preview Placeholder</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section proof-band" data-aos="fade-up">
+      <div class="container proof-band-grid">
+        <div class="proof-item">
+          <h3>Process</h3>
+          <p>Placeholder: Discovery, design, development, launch, and support.</p>
+        </div>
+        <div class="proof-item">
+          <h3>Communication</h3>
+          <p>Placeholder: Weekly check-ins, milestone updates, and transparent scope changes.</p>
+        </div>
+        <div class="proof-item">
+          <h3>Reliability</h3>
+          <p>Placeholder: Launch checklist, QA pass, and performance review before go-live.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section additional-projects" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title">Additional Projects</h2>
+        <p class="section-text">Use this section for shorter entries after the featured case studies.</p>
+
+        <div class="additional-grid">
+          <article class="mini-project">
+            <h3>Project Placeholder A</h3>
+            <p>One-line project summary placeholder.</p>
+            <a href="#">Link placeholder</a>
+          </article>
+          <article class="mini-project">
+            <h3>Project Placeholder B</h3>
+            <p>One-line project summary placeholder.</p>
+            <a href="#">Link placeholder</a>
+          </article>
+          <article class="mini-project">
+            <h3>Project Placeholder C</h3>
+            <p>One-line project summary placeholder.</p>
+            <a href="#">Link placeholder</a>
+          </article>
+          <article class="mini-project">
+            <h3>Project Placeholder D</h3>
+            <p>One-line project summary placeholder.</p>
+            <a href="#">Link placeholder</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section projects-final-cta" data-aos="fade-up">
+      <div class="container final-cta-card">
+        <h2>Ready to build your project?</h2>
+        <p>
+          If you want this same level of clarity, proof, and communication for your own website, let&apos;s start.
+        </p>
+        <div class="cta-row">
+          <a href="/html/contact.html" class="btn">Start a Project</a>
+          <a href="mailto:keanedwards1@gmail.com" class="btn btn-secondary">Email Directly</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Kean Edwards. All rights reserved.</p>
+    <p style="margin-top: 10px;">
+      <a href="mailto:keanedwards1@gmail.com">keanedwards1@gmail.com</a> |
+      <a href="tel:4159302468">415-930-2468</a>
+    </p>
+  </footer>
+
+  <script src="/scripts.js"></script>
 </body>
 
 </html>
