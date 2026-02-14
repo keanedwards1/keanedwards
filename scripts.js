@@ -55,9 +55,63 @@ const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.nav-links');
 
 if (burger && navLinks) {
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    burger.classList.toggle('toggle');
+  const navAnchors = navLinks.querySelectorAll('a');
+
+  const openMenu = () => {
+    navLinks.classList.add('active');
+    burger.classList.add('toggle');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('menu-open');
+  };
+
+  const closeMenu = () => {
+    navLinks.classList.remove('active');
+    burger.classList.remove('toggle');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+  };
+
+  const toggleMenu = () => {
+    if (navLinks.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  };
+
+  burger.setAttribute('role', 'button');
+  burger.setAttribute('tabindex', '0');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.setAttribute('aria-label', 'Toggle navigation menu');
+
+  burger.addEventListener('click', toggleMenu);
+
+  burger.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleMenu();
+    }
+  });
+
+  navAnchors.forEach((anchor) => {
+    anchor.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', (event) => {
+    const clickedInsideMenu = navLinks.contains(event.target) || burger.contains(event.target);
+    if (!clickedInsideMenu) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    closeMenu();
   });
 }
 

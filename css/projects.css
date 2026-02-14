@@ -53,8 +53,26 @@ main {
 .cta-row {
   margin-top: 1.75rem;
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 0.85rem;
   flex-wrap: wrap;
+}
+
+.project-btn {
+ width: 100%;
+}
+
+.hero-secondary-link {
+  background: rgba(107, 124, 147, 0.08);
+  border: 1px solid rgba(107, 124, 147, 0.38) !important;
+  color: var(--accent-2);
+}
+
+.hero-secondary-link:hover {
+  background: var(--accent-2);
+  border: 1px solid var(--accent-2) !important;
+  color: white;
 }
 
 .btn.btn-secondary {
@@ -261,6 +279,7 @@ main {
 .final-cta-card .cta-row {
   justify-content: center;
 }
+
 
 @media (max-width: 860px) {
   .case-study {
