@@ -86,7 +86,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Source Serif 4", Georgia, serif;
   letter-spacing: 0.2px;
 }
 
@@ -193,7 +193,7 @@ h3 {
 }
 
 .nav-links a {
-  color: var(--text-color);
+  color: var(--text);
   text-decoration: none;
   position: relative;
   padding: 5px 0;
@@ -223,7 +223,7 @@ h3 {
 .burger div {
   width: 25px;
   height: 3px;
-  background: var(--text-color);
+  background: var(--text);
   margin: 5px;
   transition: var(--transition);
 }
@@ -264,12 +264,27 @@ h3 {
   align-items: flex-start;
   justify-content: center;
   text-align: center;
+  height: 100vh;
   padding: 140px 5% 80px;
+  background-image:
+    url("https://cdn.pixabay.com/photo/2017/11/07/12/32/blur-office-background-2926794_1280.jpg");
+  background-image: url("https://cdn.pixabay.com/photo/2024/11/11/07/44/woman-9189442_1280.jpg"),
+    linear-gradient(180deg, rgba(248, 247, 243, 0.36) 0%, rgba(248, 247, 243, 0.48) 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
   max-width: 760px;
   margin: 0 auto;
+  padding: 1.25rem 1.4rem 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.501);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(31, 31, 31, 0.08);
+  box-shadow: 0 8px 26px rgba(31, 31, 31, 0.08);
   animation: fadeInUp 1s ease-out forwards;
   text-align: center;
 }
@@ -278,27 +293,36 @@ h3 {
   font-size: 0.82rem;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: #171d28;
   margin-bottom: 0.8rem;
-  font-weight: 600;
+  display: inline-block;
+  padding: 0.24rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 300;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 .hero-title {
   font-size: clamp(2.4rem, 4vw, 3.4rem);
   margin-bottom: 0.75rem;
   font-weight: 600;
+  color: #171a1f;
   max-width: 24ch;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.28);
 }
 
 .hero-subtitle {
   font-size: 1.1rem;
   margin-bottom: 0.9rem;
-  color: var(--muted);
+  color: #2f3742;
   max-width: 52ch;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 .hero-cta-group {
@@ -315,10 +339,25 @@ h3 {
 }
 
 .hero-secondary-link {
-  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.658);
+/*   background: rgba(248, 245, 239, 0.72);
+ */  color: #323944;
   font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.35);
+  transition: color var(--transition), background var(--transition), border-color var(--transition);
+}
+
+.hero-secondary-link:hover {
+  color: #1b2839;
+  background: rgba(248, 245, 239, 0.84);
+  border-color: rgba(255, 255, 255, 0.658);
 }
 
 .btn {
@@ -360,6 +399,10 @@ h3 {
   .hero {
     padding-top: 118px;
     padding-bottom: 68px;
+  }
+
+  .hero-content {
+    padding: 1rem 0.95rem 0.85rem;
   }
 }
 
@@ -443,17 +486,13 @@ h3 {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 10px 28px rgba(31, 31, 31, 0.07);
-  transition:
-    box-shadow var(--dur-slow) var(--ease-premium),
-    border-color var(--dur-slow) var(--ease-premium),
-    transform var(--dur-slow) var(--ease-premium);
-  will-change: transform, box-shadow;
+  transition: box-shadow 220ms ease, border-color 220ms ease;
+  will-change: box-shadow;
 }
 
 .project-card:hover {
-  transform: translateY(-1px);
-  border-color: rgba(31, 31, 31, 0.16);
-  box-shadow: 0 18px 46px rgba(31, 31, 31, 0.10);
+  border-color: rgba(31, 31, 31, 0.2);
+  box-shadow: 0 14px 32px rgba(31, 31, 31, 0.1);
 }
 
 .project-image img {
@@ -464,14 +503,12 @@ h3 {
 }
 
 .project-card:hover .project-image img {
-  opacity: 0.96; /* optional, extremely subtle */
+  opacity: 1;
 }
 
 .service-card[data-aos],
 .project-card[data-aos] {
-  transition: box-shadow 320ms cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 320ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 320ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: box-shadow 220ms ease, border-color 220ms ease !important;
 }
 
 .project-info {
@@ -480,15 +517,34 @@ h3 {
 
 .tech-tags {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.5rem;
   margin-top: 0.5rem;
+  max-width: 100%;
+}
+
+.tech-tags h3 {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 1rem;
+  color: var(--muted);
 }
 
 .tech-tags span {
-  background: var(--second-accent);
-  padding: 0.25rem 0.5rem;
-  border-radius: 3px;
-  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-2);
+  line-height: 1;
+  max-width: 100%;
+  white-space: nowrap;
 }
 
 /* --- Footer --- */
@@ -627,11 +683,11 @@ footer {
 }
 
 .hero-trust span {
-  border: 1px solid var(--border);
-  background: var(--surface);
+  border: 1px solid rgba(31, 31, 31, 0.12);
+  background: rgba(255, 255, 255, 0.72);
   border-radius: 999px;
   padding: 0.32rem 0.72rem;
-  color: var(--muted);
+  color: #3c4552;
 }
 
 

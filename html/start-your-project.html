@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kean Edwards | Start Your Project</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/css/contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/css/intlTelInput.css">
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/intlTelInput.min.js"></script>
+
+  <link rel="icon" type="image/png" href="/images/icon.png">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+  <div class="loader">
+    <div class="loader-circle"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <a href="/index.html" class="logo-link">
+        <div class="logo">Kean Edwards</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/index.html#hero">Home</a></li>
+        <li><a href="/html/projects.html">Projects</a></li>
+        <li><a href="/html/start-your-project.html">Start Your Project</a></li>
+        <li><a href="/html/contact.html">Contact</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact content-section" data-aos="fade-up">
+    <div class="container contact-container">
+      <h2 class="section-title">Let&apos;s Start Your Project</h2>
+      <p class="section-text">
+        Tell me a bit about your project so I can tailor my services to your needs.
+      </p>
+
+      <p class="required-legend" style="margin: 6px 0 18px; opacity: 0.85;">
+        <span class="req" aria-hidden="true">*</span> Required
+      </p>
+
+      <form id="contactForm" class="contact-form" action="https://formsubmit.co/keanedwards1@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New portfolio inquiry (keanedwards)" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="true" />
+        <input type="hidden" name="_next" value="https://keanedwards.vercel.app/html/thanks.html" />
+        <input type="hidden" id="replyto" name="_replyto" value="" />
+
+        <!-- Step 1 -->
+        <div class="form-step form-step-active" data-step="1">
+          <label for="name">Your Name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+          <label for="email">Email Address <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone_display" autocomplete="tel" />
+
+          <input type="hidden" id="phone_e164" name="phone" value="" />
+
+          <button type="button" class="btn next-btn">Next</button>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="form-step" data-step="2">
+          <label for="project-type">What type of project are you looking for? <span class="req"
+              aria-hidden="true">*</span></label>
+          <select id="project-type" name="project_type" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="web-design">Web Design</option>
+            <option value="development">Development</option>
+            <option value="seo">SEO Optimization</option>
+            <option value="branding">Branding</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="budget">What is your estimated budget? <span class="req" aria-hidden="true">*</span></label>
+          <select id="budget" name="budget" required>
+            <option value="" disabled selected>Select a range</option>
+            <option value="under-1000">Under $1,000</option>
+            <option value="1000-5000">$1,000 - $5,000</option>
+            <option value="5000-10000">$5,000 - $10,000</option>
+            <option value="over-10000">Over $10,000</option>
+          </select>
+
+          <div class="form-actions">
+            <button type="button" class="btn prev-btn">Back</button>
+            <button type="button" class="btn next-btn">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="form-step" data-step="3">
+          <label for="timeline">What is your expected timeline? <span class="req" aria-hidden="true">*</span></label>
+          <select id="timeline" name="timeline" required>
+            <option value="" disabled selected>Select a timeline</option>
+            <option value="immediate">Immediate</option>
+            <option value="1-3-months">1-3 Months</option>
+            <option value="3-6-months">3-6 Months</option>
+            <option value="flexible">Flexible</option>
+          </select>
+
+          <label for="details">Tell us more about your project <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="details" name="details" placeholder="Describe your project in detail..." rows="5"
+            required></textarea>
+
+          <div class="form-actions">
+            <button type="button" class="btn prev-btn">Back</button>
+            <button type="submit" class="btn submit-btn">Submit</button>
+          </div>
+        </div>
+
+        <div class="form-progress">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div id="toast-container"></div>
+
+  <footer>
+    <p>&copy; 2025 Kean Edwards. All rights reserved.</p>
+    <p style="margin-top: 10px;"><a href="mailto:keanedwards1@gmail.com">keanedwards1@gmail.com</a> | <a
+        href="tel:4159302468">415-930-2468</a></p>
+  </footer>
+
+  <script src="/scripts.js"></script>
+
+  <script>
+    function showToast(message, duration = 3000) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.textContent = message;
+      container.appendChild(toast);
+
+      void toast.offsetWidth;
+      toast.classList.add('show');
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 500);
+      }, duration);
+    }
+
+    // --- Multi-Step Form Logic ---
+    const form = document.getElementById('contactForm');
+    const formSteps = Array.from(document.querySelectorAll('.form-step'));
+    const nextBtns = document.querySelectorAll('.next-btn');
+    const prevBtns = document.querySelectorAll('.prev-btn');
+    const progressBar = document.getElementById('progressBar');
+    let currentStep = 0;
+
+    const phoneEl = document.getElementById('phone');
+    const phoneE164El = document.getElementById('phone_e164');
+    const emailEl = document.getElementById('email');
+    const replyToEl = document.getElementById('replyto');
+
+    const iti = window.intlTelInput(phoneEl, {
+      initialCountry: 'us',
+      separateDialCode: true,
+      nationalMode: false,
+      autoPlaceholder: 'polite',
+      placeholderNumberType: 'MOBILE',
+      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js"
+    });
+
+    function updateFormSteps() {
+      formSteps.forEach((stepEl, index) => {
+        const isActive = index === currentStep;
+        stepEl.classList.toggle('form-step-active', isActive);
+
+        // CHANGED: disable fields in inactive steps so they don't block validation
+        const fields = stepEl.querySelectorAll('input, select, textarea');
+        fields.forEach((field) => {
+          field.disabled = !isActive;
+        });
+      });
+    }
+
+    function updateProgressBar() {
+      const progress = (currentStep / (formSteps.length - 1)) * 100;
+      progressBar.style.width = progress + '%';
+    }
+
+    function markInvalid(field) {
+      field.classList.add('field-error');
+      field.setAttribute('aria-invalid', 'true');
+    }
+
+    function clearInvalid(field) {
+      field.classList.remove('field-error');
+      field.removeAttribute('aria-invalid');
+    }
+
+    function validateStep(stepIndex) {
+      const stepEl = formSteps[stepIndex];
+      if (!stepEl) return true;
+
+      let firstInvalid = null;
+
+      // Only fields in the active step
+      const fields = Array.from(stepEl.querySelectorAll('input, select, textarea'))
+        .filter((f) => !f.disabled);
+
+      // Clear previous errors
+      fields.forEach(clearInvalid);
+
+      // 1) Explicit email check (by ID) if email is in this step
+      // 1) Explicit email check (by ID) if email is in this step
+      const emailField = stepEl.querySelector('#email');
+      if (emailField) {
+        const raw = emailField.value;
+        const trimmed = raw.trim();
+        if (raw !== trimmed) emailField.value = trimmed;
+
+        // STRICTER REGEX: Requires characters, then @, then characters, then a dot, then characters.
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(emailField.value) || !emailField.checkValidity()) {
+          markInvalid(emailField);
+          firstInvalid = firstInvalid || emailField;
+        }
+      }
+
+      // 2) Validate the rest (required/select/etc.)
+      for (const field of fields) {
+        if (field.id === 'email') continue; // already handled
+
+        // phone optional (only validate if user typed)
+        if (field.id === 'phone') {
+          const hasPhone = field.value.trim().length > 0;
+          if (hasPhone && window.intlTelInputUtils && !iti.isValidNumber()) {
+            markInvalid(field);
+            firstInvalid = firstInvalid || field;
+          }
+          continue;
+        }
+
+        // Only enforce required fields (and any typed fields with built-in constraints)
+        if (field.required || field.value.trim().length > 0) {
+          if (!field.checkValidity()) {
+            markInvalid(field);
+            firstInvalid = firstInvalid || field;
+          }
+        }
+      }
+
+      if (firstInvalid) {
+        if (typeof firstInvalid.reportValidity === 'function') firstInvalid.reportValidity();
+        firstInvalid.focus();
+        showToast('Please fix the highlighted fields before continuing.', 3500);
+        return false;
+      }
+
+      return true;
+    }
+
+
+
+    emailEl.addEventListener('blur', (e) => {
+      const field = e.target;
+      const raw = field.value;
+      const trimmed = raw.trim();
+
+      // Auto-trim on blur
+      if (raw !== trimmed) field.value = trimmed;
+
+      // Strict Regex (Same as validateStep)
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      // If regex fails OR standard check fails -> Mark Invalid
+      if (!emailRegex.test(field.value) || !field.checkValidity()) {
+        markInvalid(field);
+      } else {
+        clearInvalid(field);
+      }
+    });
+
+    // Clear red highlight as user edits
+    document.querySelectorAll('input, select, textarea').forEach((field) => {
+      field.addEventListener('input', () => clearInvalid(field));
+      field.addEventListener('change', () => clearInvalid(field));
+    });
+
+    nextBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!validateStep(currentStep)) return;
+        currentStep = Math.min(currentStep + 1, formSteps.length - 1);
+        updateFormSteps();
+        updateProgressBar();
+      });
+    });
+
+    prevBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        currentStep = Math.max(currentStep - 1, 0);
+        updateFormSteps();
+        updateProgressBar();
+      });
+    });
+
+    form.addEventListener('submit', (e) => {
+      if (!validateStep(currentStep)) {
+        e.preventDefault();
+        return;
+      }
+
+      const allFields = form.querySelectorAll('input, select, textarea');
+      allFields.forEach(field => {
+        field.disabled = false;
+      });
+      // ============================================================
+
+      // Reply-To set to visitor email
+      replyToEl.value = emailEl.value || '';
+
+      // Write E.164 phone into hidden "phone" field (if any)
+      const phoneVal = (phoneEl.value || '').trim();
+      if (phoneVal.length > 0) {
+        const e164 = iti.getNumber();
+        phoneE164El.value = e164 || phoneVal;
+      } else {
+        phoneE164El.value = '';
+      }
+    });
+
+    // init
+    updateFormSteps();
+    updateProgressBar();
+  </script>
+
+</body>
+
+</html>
