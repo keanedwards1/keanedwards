@@ -13,6 +13,9 @@ main {
       background-image:
         linear-gradient(180deg, rgba(248, 247, 243, 0.04) 0%, rgba(248, 247, 243, 0.1) 100%),
     url("/images/hero-bg.jpg");
+          background-image:
+        linear-gradient(180deg, rgba(248, 247, 243, 0.04) 0%, rgba(248, 247, 243, 0.1) 100%),
+    url("/images/sunset.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
