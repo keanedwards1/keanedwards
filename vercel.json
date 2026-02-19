@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/html/projects.html",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/html/start-your-project.html",
+      "destination": "/start-your-project",
+      "permanent": true
+    },
+    {
+      "source": "/html/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/html/thanks.html",
+      "destination": "/thanks",
+      "permanent": true
+    }
+  ]
+}
