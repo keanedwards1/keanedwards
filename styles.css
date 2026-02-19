@@ -492,6 +492,17 @@ body.menu-open {
   margin-top: 4rem;
 }
 
+.portfolio-cta-group {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.portfolio-cta-group .btn {
+  width: min(100%, 340px);
+}
+
 .project-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -557,6 +568,31 @@ body.menu-open {
   line-height: 1;
   max-width: 100%;
   white-space: nowrap;
+}
+
+.contact {
+  background: var(--surface-2);
+}
+
+.contact-container {
+  max-width: 760px;
+}
+
+.contact-container .section-title {
+  margin-bottom: 0.85rem;
+}
+
+.contact-container .section-text {
+  margin-bottom: 1.35rem;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-actions .btn {
+  min-width: 170px;
 }
 
 /* --- Footer --- */

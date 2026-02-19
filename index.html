@@ -4,16 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Changed title to reflect your name and portfolio -->
     <title>Kean Edwards | Portfolio</title>
-    <!-- Link to your refined CSS -->
     <link rel="stylesheet" href="styles.css" />
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet" />
-    <!-- AOS Library for scroll animations -->
+    <!-- scroll animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -24,16 +21,15 @@
 </head>
 
 <body class="home">
-    <!-- Loader Animation (remains as before, with session storage logic if needed) -->
+    <!-- Loader Animation -->
     <div class="loader">
         <div class="loader-circle"></div>
     </div>
 
-    <!-- Header with modern micro-interactions -->
+    <!-- Header-->
     <header class="header">
         <nav class="nav">
             <a href="/index.html" class="logo-link">
-                <!-- Your logo now reflects your name -->
                 <div class="logo">Kean Edwards</div>
             </a>
             <ul class="nav-links">
@@ -101,7 +97,6 @@
     <!-- About Section -->
     <section id="about" class="about content-section" data-aos="fade-up">
         <div class="container">
-            <!-- Changed section title -->
             <h2 class="section-title">About Me</h2>
             <p class="section-text">
                 I&apos;m Kean, a web developer focused on building new websites and handling migrations for nonprofits
@@ -173,7 +168,6 @@
                     <p>Good SEO gets your site seen on Google, but it's not automatically setup. we can add this fully
                         if you need.</p>
                 </div>
-                <!-- Added new service card for Branding & Visual Identity -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <h3>Branding & Visual Identity</h3>
                     <p>I think the most important aspect of every website is how it looks; is it clean, beautiful, and
@@ -210,11 +204,8 @@
     <!-- Portfolio / Projects Section -->
     <section id="portfolio" class="portfolio content-section" data-aos="fade-up">
         <div class="container">
-            <!-- Changed section title from 'Our Work' to 'Projects' -->
             <h2 class="section-title">Projects</h2>
             <div class="project-grid">
-                <!-- Updated project card with clickable link -->
-
                 <a href="https://www.geronimowoodworks.com/" target="_blank" class="project-card" data-aos="zoom-in">
                     <div class="project-image">
                         <img src="/images/project3.png" alt="Marquee Kit - Responsive Web App" />
@@ -279,14 +270,11 @@
                     </div>
                 </a>
 
-                <!-- Additional project cards can be added similarly -->
             </div>
-            <div class="archived-projects">
-                <a href="https://keans-portfolio.vercel.app/" target="_blank" class="btn" styles="padding-top: 60px;">
+            <div class="portfolio-cta-group">
+                <a href="https://keans-portfolio.vercel.app/" target="_blank" class="btn">
                     Click here to see archived works
                 </a>
-            </div>
-            <div class="archived-projects">
                 <a href="/html/projects.html" class="btn">See Full Project Page</a>
             </div>
         </div>
@@ -295,21 +283,20 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact content-section" data-aos="fade-up">
-        <div class="container">
+        <div class="container contact-container">
             <h2 class="section-title">Get In Touch</h2>
-            <!-- Updated contact text -->
             <p class="section-text">
                 Don&apos;t hesitate to send an email or call if you&apos;re interested in having a website built for
                 you.
             </p>
-            <!-- For brevity, you can integrate your advanced multi-step contact form here -->
-            <a href="/html/contact.html" class="btn">Contact Me</a>
+            <div class="contact-actions">
+                <a href="/html/contact.html" class="btn">Contact Me</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <!-- Changed footer text to reflect your branding -->
         <p>&copy; 2025 Kean Edwards. All rights reserved.</p>
         <p style="margin-top: 10px;"><a href="mailto:keanedwards1@gmail.com">keanedwards1@gmail.com</a> | <a
                 href="tel:4159302468">415-930-2468</a> </p>
