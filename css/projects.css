@@ -192,6 +192,10 @@ main {
   transition: transform 260ms ease, filter 260ms ease, box-shadow 260ms ease;
 }
 
+.case-study-image-2 {
+  object-position: center 90%;
+}
+
 .case-study-media-cta {
   position: absolute;
   right: 0.7rem;
