@@ -20,16 +20,13 @@
     content="Start your next website project with Lake Lagunitas Co. Share your goals, timeline, and budget to get started." />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="/css/contact.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/css/intlTelInput.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/css/intlTelInput.css" />
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/intlTelInput.min.js"></script>
-
-  <link rel="icon" type="image/png" href="/images/icon.png">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="icon" type="image/png" href="/images/icon.png" />
 </head>
 
 <body>
@@ -37,7 +34,6 @@
     <div class="loader-circle"></div>
   </div>
 
-  <!-- Header -->
   <header class="header">
     <nav class="nav">
       <a href="/" class="logo-link">
@@ -57,103 +53,178 @@
     </nav>
   </header>
 
-  <!-- Contact Section -->
-  <section class="contact content-section" data-aos="fade-up">
-    <div class="container contact-container">
-      <h2 class="section-title">Let&apos;s Start Your Project</h2>
-      <p class="section-text">
-        Tell us a bit about your project so we can tailor services to your needs.
-      </p>
+  <!-- Page Hero -->
+  <section class="page-hero page-hero--intake">
+    <div class="page-hero-inner">
+      <span class="page-hero-kicker">Project Intake</span>
+      <h1>Let's Build Something Great</h1>
+      <p>Tell us what you're building and we'll follow up with a practical plan.</p>
+    </div>
+  </section>
 
-      <p class="required-legend" style="margin: 6px 0 18px; opacity: 0.85;">
-        <span class="req" aria-hidden="true">*</span> Required
-      </p>
+  <!-- Intake Body -->
+  <section class="intake-page-body">
+    <div class="container">
+      <div class="intake-layout">
 
-      <form id="contactForm" class="contact-form" action="https://formsubmit.co/contact@lakelagunitas.com" method="POST">
-        <input type="hidden" name="_subject" value="New portfolio inquiry (lakelagunitas)" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="true" />
-        <input type="hidden" name="_next" value="https://lakelagunitas.com/thanks" />
-        <input type="hidden" id="replyto" name="_replyto" value="" />
+        <!-- Left: Form -->
+        <div class="intake-form-panel">
 
-        <!-- Step 1 -->
-        <div class="form-step form-step-active" data-step="1">
-          <label for="name">Your Name <span class="req" aria-hidden="true">*</span></label>
-          <input type="text" id="name" name="name" placeholder="Your full name" required />
-
-          <label for="email">Email Address <span class="req" aria-hidden="true">*</span></label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required />
-
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone_display" autocomplete="tel" />
-
-          <input type="hidden" id="phone_e164" name="phone" value="" />
-
-          <button type="button" class="btn next-btn">Next</button>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="form-step" data-step="2">
-          <label for="project-type">What type of project are you looking for? <span class="req"
-              aria-hidden="true">*</span></label>
-          <select id="project-type" name="project_type" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="web-design">Web Design</option>
-            <option value="development">Development</option>
-            <option value="seo">SEO Optimization</option>
-            <option value="branding">Branding</option>
-            <option value="other">Other</option>
-          </select>
-
-          <label for="budget">What is your estimated budget? <span class="req" aria-hidden="true">*</span></label>
-          <select id="budget" name="budget" required>
-            <option value="" disabled selected>Select a range</option>
-            <option value="under-1000">Under $1,000</option>
-            <option value="1000-5000">$1,000 - $5,000</option>
-            <option value="5000-10000">$5,000 - $10,000</option>
-            <option value="over-10000">Over $10,000</option>
-          </select>
-
-          <div class="form-actions">
-            <button type="button" class="btn prev-btn">Back</button>
-            <button type="button" class="btn next-btn">Next</button>
+          <div class="form-panel-header">
+            <h2 class="form-panel-title">Project Details</h2>
+            <p class="form-panel-sub">Takes about two minutes. We'll reply within one business day.</p>
           </div>
-        </div>
 
-        <!-- Step 3 -->
-        <div class="form-step" data-step="3">
-          <label for="timeline">What is your expected timeline? <span class="req" aria-hidden="true">*</span></label>
-          <select id="timeline" name="timeline" required>
-            <option value="" disabled selected>Select a timeline</option>
-            <option value="immediate">Immediate</option>
-            <option value="1-3-months">1-3 Months</option>
-            <option value="3-6-months">3-6 Months</option>
-            <option value="flexible">Flexible</option>
-          </select>
-
-          <label for="details">Tell us more about your project <span class="req" aria-hidden="true">*</span></label>
-          <textarea id="details" name="details" placeholder="Describe your project in detail..." rows="5"
-            required></textarea>
-
-          <div class="form-actions">
-            <button type="button" class="btn prev-btn">Back</button>
-            <button type="submit" class="btn submit-btn">Submit</button>
+          <!-- Step Indicator -->
+          <div class="step-indicator-wrap" id="stepIndicator" aria-hidden="true">
+            <div class="step-item">
+              <div class="step-dot active" id="dot-0">1</div>
+              <span class="step-label active" id="label-0">You</span>
+            </div>
+            <div class="step-connector" id="conn-0"></div>
+            <div class="step-item">
+              <div class="step-dot" id="dot-1">2</div>
+              <span class="step-label" id="label-1">Project</span>
+            </div>
+            <div class="step-connector" id="conn-1"></div>
+            <div class="step-item">
+              <div class="step-dot" id="dot-2">3</div>
+              <span class="step-label" id="label-2">Details</span>
+            </div>
           </div>
+
+          <p class="required-legend">
+            <span class="req" aria-hidden="true">*</span> Required
+          </p>
+
+          <form id="contactForm" class="contact-form" action="https://formsubmit.co/contact@lakelagunitas.com"
+            method="POST">
+            <input type="hidden" name="_subject" value="New portfolio inquiry (lakelagunitas)" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="true" />
+            <input type="hidden" name="_next" value="https://lakelagunitas.com/thanks" />
+            <input type="hidden" id="replyto" name="_replyto" value="" />
+
+            <!-- Step 1: Contact info -->
+            <div class="form-step form-step-active" data-step="1">
+              <label for="name">Your Name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+              <label for="email">Email Address <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+              <label for="phone">Phone Number <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+              <input type="tel" id="phone" name="phone_display" autocomplete="tel" />
+              <input type="hidden" id="phone_e164" name="phone" value="" />
+
+              <button type="button" class="btn next-btn">Next &rarr;</button>
+            </div>
+
+            <!-- Step 2: Project type & budget -->
+            <div class="form-step" data-step="2">
+              <label for="project-type">What type of project? <span class="req" aria-hidden="true">*</span></label>
+              <select id="project-type" name="project_type" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="new-website">New Website</option>
+                <option value="migration">Site Migration</option>
+                <option value="web-design">Web Design Refresh</option>
+                <option value="development">Custom Development</option>
+                <option value="seo">SEO Optimization</option>
+                <option value="branding">Branding</option>
+                <option value="other">Other</option>
+              </select>
+
+              <label for="budget">Estimated budget <span class="req" aria-hidden="true">*</span></label>
+              <select id="budget" name="budget" required>
+                <option value="" disabled selected>Select a range</option>
+                <option value="under-1000">Under $1,000</option>
+                <option value="1000-5000">$1,000 – $5,000</option>
+                <option value="5000-10000">$5,000 – $10,000</option>
+                <option value="over-10000">Over $10,000</option>
+              </select>
+
+              <div class="form-actions">
+                <button type="button" class="btn prev-btn">&larr; Back</button>
+                <button type="button" class="btn next-btn">Next &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Timeline & description -->
+            <div class="form-step" data-step="3">
+              <label for="timeline">Expected timeline <span class="req" aria-hidden="true">*</span></label>
+              <select id="timeline" name="timeline" required>
+                <option value="" disabled selected>Select a timeline</option>
+                <option value="immediate">As soon as possible</option>
+                <option value="1-3-months">1–3 Months</option>
+                <option value="3-6-months">3–6 Months</option>
+                <option value="flexible">Flexible / Not sure yet</option>
+              </select>
+
+              <label for="details">Tell us about your project <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="details" name="details"
+                placeholder="Describe your project, your goals, your audience, and any existing website or assets you have..."
+                rows="5" required></textarea>
+
+              <div class="form-actions">
+                <button type="button" class="btn prev-btn">&larr; Back</button>
+                <button type="submit" class="btn submit-btn">Submit Project &rarr;</button>
+              </div>
+            </div>
+
+            <div class="form-progress">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>
+          </form>
+
         </div>
 
-        <div class="form-progress">
-          <div class="progress-bar" id="progressBar"></div>
+        <!-- Right: Sidebar -->
+        <div class="intake-sidebar">
+
+          <div class="sidebar-card">
+            <h3>Planning Notes</h3>
+            <ul class="included-list">
+              <li>Scope and deliverables are defined before build begins</li>
+              <li>Content, design, and technical constraints are reviewed early</li>
+              <li>Milestones are set so progress is easy to track</li>
+              <li>Launch and handoff requirements are agreed in advance</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Typical Timeline</h3>
+            <ul class="included-list">
+              <li>Discovery &amp; scoping: 1 week</li>
+              <li>Design &amp; build: 3–5 weeks</li>
+              <li>Review &amp; revisions: 1–2 weeks</li>
+              <li>Launch &amp; handoff: 2–3 days</li>
+            </ul>
+          </div>
+
         </div>
-      </form>
+
+      </div>
     </div>
   </section>
 
   <div id="toast-container"></div>
 
   <footer>
-    <p>&copy; 2025 Lake Lagunitas Co. All rights reserved.</p>
-    <p style="margin-top: 10px;"><a href="mailto:contact@lakelagunitas.com">contact@lakelagunitas.com</a> | <a
-        href="tel:4159302468">415-930-2468</a></p>
+    <div class="footer-inner">
+      <p class="footer-brand">Lake Lagunitas Co</p>
+      <nav class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/projects">Projects</a>
+        <a href="/start-your-project">Start a Project</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <div class="footer-contact-line">
+        <a href="mailto:contact@lakelagunitas.com">contact@lakelagunitas.com</a>
+        <span class="footer-sep">·</span>
+        <a href="tel:4159302468">415-930-2468</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Lake Lagunitas Co. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="/scripts.js"></script>
@@ -165,10 +236,8 @@
       toast.className = 'toast';
       toast.textContent = message;
       container.appendChild(toast);
-
       void toast.offsetWidth;
       toast.classList.add('show');
-
       setTimeout(() => {
         toast.classList.remove('show');
         setTimeout(() => toast.remove(), 500);
@@ -197,16 +266,39 @@
       utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js"
     });
 
+    function updateStepIndicator() {
+      for (let i = 0; i < formSteps.length; i++) {
+        const dot = document.getElementById('dot-' + i);
+        const label = document.getElementById('label-' + i);
+        const conn = document.getElementById('conn-' + i);
+
+        if (dot) {
+          dot.classList.remove('active', 'completed');
+          if (i < currentStep) {
+            dot.classList.add('completed');
+            dot.textContent = '✓';
+          } else {
+            dot.textContent = i + 1;
+            if (i === currentStep) dot.classList.add('active');
+          }
+        }
+
+        if (label) {
+          label.classList.toggle('active', i === currentStep);
+        }
+
+        if (conn) {
+          conn.classList.toggle('filled', i < currentStep);
+        }
+      }
+    }
+
     function updateFormSteps() {
       formSteps.forEach((stepEl, index) => {
         const isActive = index === currentStep;
         stepEl.classList.toggle('form-step-active', isActive);
-
-        // CHANGED: disable fields in inactive steps so they don't block validation
         const fields = stepEl.querySelectorAll('input, select, textarea');
-        fields.forEach((field) => {
-          field.disabled = !isActive;
-        });
+        fields.forEach((field) => { field.disabled = !isActive; });
       });
     }
 
@@ -230,36 +322,25 @@
       if (!stepEl) return true;
 
       let firstInvalid = null;
-
-      // Only fields in the active step
       const fields = Array.from(stepEl.querySelectorAll('input, select, textarea'))
         .filter((f) => !f.disabled);
 
-      // Clear previous errors
       fields.forEach(clearInvalid);
 
-      // 1) Explicit email check (by ID) if email is in this step
-      // 1) Explicit email check (by ID) if email is in this step
       const emailField = stepEl.querySelector('#email');
       if (emailField) {
         const raw = emailField.value;
         const trimmed = raw.trim();
         if (raw !== trimmed) emailField.value = trimmed;
-
-        // STRICTER REGEX: Requires characters, then @, then characters, then a dot, then characters.
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
         if (!emailRegex.test(emailField.value) || !emailField.checkValidity()) {
           markInvalid(emailField);
           firstInvalid = firstInvalid || emailField;
         }
       }
 
-      // 2) Validate the rest (required/select/etc.)
       for (const field of fields) {
-        if (field.id === 'email') continue; // already handled
-
-        // phone optional (only validate if user typed)
+        if (field.id === 'email') continue;
         if (field.id === 'phone') {
           const hasPhone = field.value.trim().length > 0;
           if (hasPhone && window.intlTelInputUtils && !iti.isValidNumber()) {
@@ -268,8 +349,6 @@
           }
           continue;
         }
-
-        // Only enforce required fields (and any typed fields with built-in constraints)
         if (field.required || field.value.trim().length > 0) {
           if (!field.checkValidity()) {
             markInvalid(field);
@@ -288,20 +367,12 @@
       return true;
     }
 
-
-
     emailEl.addEventListener('blur', (e) => {
       const field = e.target;
       const raw = field.value;
       const trimmed = raw.trim();
-
-      // Auto-trim on blur
       if (raw !== trimmed) field.value = trimmed;
-
-      // Strict Regex (Same as validateStep)
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      // If regex fails OR standard check fails -> Mark Invalid
       if (!emailRegex.test(field.value) || !field.checkValidity()) {
         markInvalid(field);
       } else {
@@ -309,7 +380,6 @@
       }
     });
 
-    // Clear red highlight as user edits
     document.querySelectorAll('input, select, textarea').forEach((field) => {
       field.addEventListener('input', () => clearInvalid(field));
       field.addEventListener('change', () => clearInvalid(field));
@@ -321,6 +391,7 @@
         currentStep = Math.min(currentStep + 1, formSteps.length - 1);
         updateFormSteps();
         updateProgressBar();
+        updateStepIndicator();
       });
     });
 
@@ -329,6 +400,7 @@
         currentStep = Math.max(currentStep - 1, 0);
         updateFormSteps();
         updateProgressBar();
+        updateStepIndicator();
       });
     });
 
@@ -337,17 +409,9 @@
         e.preventDefault();
         return;
       }
-
       const allFields = form.querySelectorAll('input, select, textarea');
-      allFields.forEach(field => {
-        field.disabled = false;
-      });
-      // ============================================================
-
-      // Reply-To set to visitor email
+      allFields.forEach(field => { field.disabled = false; });
       replyToEl.value = emailEl.value || '';
-
-      // Write E.164 phone into hidden "phone" field (if any)
       const phoneVal = (phoneEl.value || '').trim();
       if (phoneVal.length > 0) {
         const e164 = iti.getNumber();
@@ -357,9 +421,10 @@
       }
     });
 
-    // init
+    // Init
     updateFormSteps();
     updateProgressBar();
+    updateStepIndicator();
   </script>
 
 </body>

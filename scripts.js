@@ -36,7 +36,8 @@ window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
 
   if (currentScroll <= 0) {
-    header.classList.remove('scroll-up');
+    header.classList.remove('scroll-up', 'scroll-down');
+    lastScroll = 0;
     return;
   }
 
@@ -114,6 +115,21 @@ if (burger && navLinks) {
     closeMenu();
   });
 }
+
+// Active Nav Link
+function normalizePath(pathname) {
+  if (!pathname || pathname === '/') return '/';
+  return pathname.replace(/\/+$/, '') || '/';
+}
+
+const currentPath = normalizePath(window.location.pathname);
+document.querySelectorAll('.nav-links a[href]').forEach((link) => {
+  const hrefPath = normalizePath(new URL(link.href, window.location.origin).pathname);
+  if (hrefPath === currentPath) {
+    link.classList.add('is-current');
+    link.setAttribute('aria-current', 'page');
+  }
+});
 
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

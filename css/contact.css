@@ -1,92 +1,375 @@
 /* =========================================================
-   contact.css — matches styles.css “Bone + Charcoal + Faded Blue”
+   contact.css — Lake Lagunitas Co
+   Shared styles for /contact and /start-your-project
    ========================================================= */
 
-/* Contact section spacing (header is fixed) */
-.content-section {
-  padding-top: 120px;
-  padding-bottom: 80px;
+/* =========================================================
+   Page Hero Band
+   ========================================================= */
+.page-hero {
+  color: white;
+  text-align: center;
+  padding: 152px 5% 84px;
+  position: relative;
+  background-color: #0a1628;
+  overflow: hidden;
 }
 
-/* Contact page layout */
-.contact {
+.page-hero::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  right: -120px;
+  top: 10%;
+  background: radial-gradient(circle, rgba(204, 221, 255, 0.26) 0%, rgba(204, 221, 255, 0) 70%);
+  pointer-events: none;
+}
+
+/* Contact page — misty Pacific coast */
+.page-hero--contact {
+  background-image:
+    linear-gradient(140deg, rgba(10, 22, 40, 0.72) 0%, rgba(26, 48, 85, 0.65) 60%, rgba(42, 72, 114, 0.60) 100%),
+    url('/images/coast.jpg');
+  background-size: cover;
+  background-position: center 38%;
+}
+
+/* Start Your Project — starry mountain reflection */
+.page-hero--intake {
+  background-image:
+    linear-gradient(140deg, rgba(10, 22, 40, 0.62) 0%, rgba(26, 48, 85, 0.55) 60%, rgba(42, 72, 114, 0.50) 100%),
+    url('/images/mountain.jpg');
+  background-size: cover;
+  background-position: center 40%;
+}
+
+.page-hero-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.page-hero-kicker {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 1rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  display: block;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.1rem, 4.5vw, 3.2rem);
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+  line-height: 1.14;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.page-hero p {
+  font-size: 1.08rem;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.65;
+  max-width: 50ch;
+  margin: 0 auto;
+  font-family: 'Inter', system-ui, sans-serif;
+  text-wrap: pretty;
+}
+
+/* =========================================================
+   Page Body (wraps the layout grids)
+   ========================================================= */
+.contact-page-body,
+.intake-page-body {
+  background:
+    radial-gradient(circle at 10% -10%, rgba(45, 74, 122, 0.09) 0%, rgba(45, 74, 122, 0) 42%),
+    var(--bg);
+  padding: 72px 5% 100px;
+}
+
+.contact-page-body .container,
+.intake-page-body .container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   Contact Layout (info panel left, form right)
+   ========================================================= */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* =========================================================
+   Contact Info Panel (left column)
+   ========================================================= */
+.contact-info-panel {
+  position: sticky;
+  top: 88px;
+}
+
+.panel-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  font-family: 'Source Serif 4', Georgia, serif;
+}
+
+.panel-sub-heading {
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.9rem;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Contact methods */
+.contact-method-list {
   display: flex;
   flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-method-item {
+  display: flex;
   align-items: center;
-  padding: 2.5rem 5%;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
 }
 
-/* Ensure container doesn't inherit old centering assumptions */
-.contact .container {
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Title + intro */
-.contact .section-title {
-  font-size: clamp(2.1rem, 3.6vw, 3rem);
-  margin-bottom: 0.75rem;
+.contact-method-item:hover {
+  border-color: rgba(45, 74, 122, 0.3);
+  box-shadow: 0 4px 20px rgba(45, 74, 122, 0.1);
   color: var(--text);
 }
 
-.contact .section-text {
-  font-size: 1.06rem;
-  margin-bottom: 2rem;
+.method-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(45, 74, 122, 0.08);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.method-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.method-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.method-value {
+  font-size: 0.93rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Trust section */
+.trust-section {
+  margin-bottom: 2.5rem;
+}
+
+.trust-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: stretch;
+}
+
+.trust-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.5;
+  width: 100%;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.trust-list li::before {
+  content: '✓';
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.88rem;
+  flex-shrink: 0;
+  margin-top: 0.1em;
+  width: 1em;
   text-align: center;
-  max-width: 58ch;
-  margin-left: auto;
-  margin-right: auto;
+}
+
+/* Client type tags */
+.client-types-section {
+  /* container */
+}
+
+.client-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.client-tags span {
+  padding: 0.3rem 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
   color: var(--muted);
 }
 
 /* =========================================================
-   Form card
+   Contact Form Panel (right column)
+   ========================================================= */
+.contact-form-panel {
+  /* right column wrapper */
+}
+
+.form-panel-header {
+  margin: 0 auto 1.4rem;
+  max-width: 56ch;
+  text-align: center;
+}
+
+.form-panel-header::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 2px;
+  margin: 0.9rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(45, 74, 122, 0.08), rgba(45, 74, 122, 0.45), rgba(45, 74, 122, 0.08));
+}
+
+.form-panel-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-wrap: balance;
+}
+
+.form-panel-sub {
+  font-size: 0.93rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 52ch;
+}
+
+/* =========================================================
+   Contact Form (shared — both pages)
    ========================================================= */
 .contact-form {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  background: linear-gradient(180deg, #ffffff 0%, #fcfcfa 100%);
+  border: 1px solid rgba(31, 31, 31, 0.11);
+  box-shadow: 0 16px 40px rgba(31, 31, 31, 0.07);
   border-radius: var(--radius);
-  padding: 1.75rem;
+  padding: 2rem;
   width: 100%;
-  max-width: 540px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   color: var(--text);
-  margin: 0 auto;
 }
 
 /* Labels */
 .contact-form label {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  margin-bottom: 0.25rem;
   color: var(--text);
+  letter-spacing: 0.01em;
+  margin-bottom: 0.15rem;
 }
 
 /* Inputs */
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
-  background: #ffffff;
-  border: 1px solid var(--border);
-  padding: 0.85rem 0.9rem;
-  border-radius: 12px;
+  background: #fafaf9;
+  border: 1.5px solid rgba(31, 31, 31, 0.12);
+  padding: 0.85rem 0.95rem;
+  border-radius: 10px;
   color: var(--text);
-  font-size: 1rem;
+  font-size: 0.96rem;
   width: 100%;
-  transition: border-color var(--transition), box-shadow var(--transition);
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: border-color 200ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+
+.contact-form input:hover,
+.contact-form select:hover,
+.contact-form textarea:hover {
+  border-color: rgba(45, 74, 122, 0.28);
+  background: #ffffff;
+}
+
+.contact-form select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235c6370' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.95rem center;
+  padding-right: 2.5rem;
 }
 
 .contact-form textarea {
   resize: vertical;
-  min-height: 140px;
+  min-height: 128px;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: rgba(31, 31, 31, 0.45);
+  color: rgba(31, 31, 31, 0.35);
 }
 
 /* Focus ring */
@@ -94,8 +377,55 @@
 .contact-form select:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: rgba(107, 124, 147, 0.55); /* faded blue focus */
-  box-shadow: 0 0 0 4px rgba(107, 124, 147, 0.18);
+  border-color: rgba(45, 74, 122, 0.45);
+  box-shadow: 0 0 0 4px rgba(45, 74, 122, 0.09);
+  background: #ffffff;
+}
+
+/* Tighter label-input pairing on simple (non-step) forms */
+.contact-form-panel .contact-form {
+  gap: 0.35rem;
+}
+
+.contact-form-panel .contact-form > label ~ label,
+.contact-form-panel .contact-form > input + label,
+.contact-form-panel .contact-form > select + label,
+.contact-form-panel .contact-form > textarea + label {
+  margin-top: 0.9rem;
+}
+
+/* Submit full-width */
+.submit-full {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.35rem;
+  padding: 0.95rem 1.5rem;
+}
+
+/* Alt CTA below form */
+.alt-cta {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.alt-cta p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.85rem;
+}
+
+.btn-outline {
+  background: transparent !important;
+  color: var(--accent) !important;
+  border: 1.5px solid rgba(45, 74, 122, 0.45) !important;
+  box-shadow: none !important;
+}
+
+.btn-outline:hover {
+  background: rgba(45, 74, 122, 0.06) !important;
+  border-color: var(--accent) !important;
 }
 
 /* =========================================================
@@ -112,15 +442,89 @@
 }
 
 /* =========================================================
-   Buttons — align with your global .btn, but keep layout sane
+   Step Indicator (numbered circles with connectors + labels)
    ========================================================= */
+.step-indicator-wrap {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
 
-/* Step 1 "Next" uses .btn directly, keep it from stretching weirdly */
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 44px;
+}
+
+.step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid rgba(31, 31, 31, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted);
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: 'Inter', system-ui, sans-serif;
+  flex-shrink: 0;
+}
+
+.step-dot.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(45, 74, 122, 0.14);
+}
+
+.step-dot.completed {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.step-label {
+  font-size: 0.67rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+  transition: color 200ms ease;
+  font-family: 'Inter', system-ui, sans-serif;
+  text-align: center;
+}
+
+.step-label.active {
+  color: var(--accent);
+}
+
+.step-connector {
+  height: 2px;
+  width: 52px;
+  background: rgba(31, 31, 31, 0.1);
+  transition: background 300ms ease;
+  flex-shrink: 0;
+  margin-top: 15px; /* vertically centers with 32px dots */
+}
+
+.step-connector.filled {
+  background: var(--accent);
+}
+
+/* =========================================================
+   Buttons inside form
+   ========================================================= */
 .form-step .btn {
   align-self: flex-end;
 }
 
-/* Button row for steps with Back + Next/Submit */
 .form-actions {
   display: flex;
   gap: 0.75rem;
@@ -129,47 +533,186 @@
   margin-top: 0.25rem;
 }
 
-/* Make sure .btn doesn’t look odd inside the form */
 .contact-form .btn {
   border-radius: 999px;
-  padding: 0.8rem 1.15rem;
+  padding: 0.8rem 1.4rem;
 }
 
-/* Back button as “secondary” */
 .form-actions .prev-btn {
   background: transparent !important;
   color: var(--text) !important;
-  border: 1px solid var(--border) !important;
+  border: 1.5px solid rgba(31, 31, 31, 0.14) !important;
   box-shadow: none !important;
 }
 
 .form-actions .prev-btn:hover {
-  transform: translateY(-1px);
-  background: rgba(107, 124, 147, 0.08) !important;
+  background: rgba(31, 31, 31, 0.04) !important;
 }
 
 /* =========================================================
-   Progress indicator
+   Progress bar
    ========================================================= */
 .form-progress {
   width: 100%;
   background: var(--surface-2);
   border-radius: 999px;
   overflow: hidden;
-  margin-top: 0.75rem;
-  border: 1px solid var(--border);
+  margin-top: 1rem;
+  height: 3px;
 }
 
 .form-progress .progress-bar {
-  height: 8px;
+  height: 3px;
   width: 0%;
   background: var(--accent);
-  transition: width 260ms ease;
+  transition: width 300ms ease;
   border-radius: 999px;
 }
 
 /* =========================================================
-   intl-tel-input — make it match the light theme
+   Intake Layout (form left, sidebar right)
+   ========================================================= */
+.intake-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .intake-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .intake-sidebar {
+    order: -1;
+  }
+}
+
+.intake-form-panel {
+  /* left column */
+}
+
+/* =========================================================
+   Intake Sidebar (right column)
+   ========================================================= */
+.intake-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: sticky;
+  top: 88px;
+}
+
+.sidebar-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(31, 31, 31, 0.06);
+  transition: box-shadow 240ms var(--ease-premium), border-color 240ms var(--ease-premium);
+}
+
+.sidebar-card:hover,
+.sidebar-card:focus-within {
+  border-color: rgba(45, 74, 122, 0.24);
+  box-shadow: 0 14px 34px rgba(31, 31, 31, 0.1);
+}
+
+.sidebar-card h3 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.1rem;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.included-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: stretch;
+}
+
+.included-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.5;
+  width: 100%;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.included-list li::before {
+  content: '✓';
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 0.06em;
+  width: 1em;
+  text-align: center;
+}
+
+.intake-sidebar .included-list li::before {
+  content: '•';
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Stats */
+.stat-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.stat-num {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 58px;
+  line-height: 1.1;
+  flex-shrink: 0;
+}
+
+.stat-label {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.4;
+  padding-top: 0.1rem;
+}
+
+/* =========================================================
+   Required legend
+   ========================================================= */
+.required-legend {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+/* =========================================================
+   intl-tel-input — light theme
    ========================================================= */
 .iti {
   width: 100%;
@@ -179,7 +722,6 @@
   border-radius: 10px 0 0 10px;
 }
 
-/* Country dropdown */
 .iti__country-list {
   background: #ffffff;
   border: 1px solid var(--border);
@@ -196,17 +738,16 @@
 }
 
 .iti__country.iti__highlight {
-  background: rgba(107, 124, 147, 0.10);
+  background: rgba(45, 74, 122, 0.08);
 }
 
-/* Dial code + search */
 .iti__selected-dial-code,
 .iti__search-input {
   color: var(--text);
 }
 
 /* =========================================================
-   Toasts — refined to match your new aesthetic
+   Toasts
    ========================================================= */
 #toast-container {
   position: fixed;
@@ -219,13 +760,14 @@
 }
 
 .toast {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.97);
   color: var(--text);
-  padding: 0.9rem 1.1rem;
-  border-radius: 14px;
+  padding: 0.9rem 1.15rem;
+  border-radius: 12px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
   opacity: 0;
   transform: translateY(-8px);
   transition: opacity 220ms ease, transform 220ms ease;
@@ -238,11 +780,25 @@
 }
 
 /* =========================================================
+   Validation states
+   ========================================================= */
+.field-error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+.req {
+  color: #e53935;
+  margin-left: 3px;
+  font-weight: 700;
+}
+
+/* =========================================================
    Small-screen tweaks
    ========================================================= */
 @media (max-width: 560px) {
   .contact-form {
-    padding: 1.25rem;
+    padding: 1.4rem;
   }
 
   .form-actions {
@@ -257,20 +813,57 @@
   .form-step .btn {
     align-self: stretch;
   }
+
+  .page-hero {
+    padding: 136px 1.25rem 64px;
+  }
+
+  .page-hero::before {
+    width: 260px;
+    height: 260px;
+    right: -90px;
+    top: 18%;
+  }
+
+  .contact-page-body,
+  .intake-page-body {
+    padding: 48px 1.25rem 72px;
+  }
 }
 
-.contact .container.contact-container {
-  margin-top: 64px;
-}
+@media (max-width: 960px) {
+  .contact-info-panel,
+  .intake-sidebar {
+    text-align: left;
+    position: static;
+    top: auto;
+  }
 
-.field-error {
-  border: 1px solid #ef4444 !important;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
-}
+  .contact-method-item {
+    text-align: left;
+  }
 
-.req {
-  color: #ef4444;
-  margin-left: 4px;
-  font-weight: 600;
-}
+  .contact-method-list {
+    margin-inline: auto;
+    max-width: 560px;
+  }
 
+  .trust-list,
+  .included-list {
+    max-width: 560px;
+    margin-inline: auto;
+  }
+
+  .trust-list li,
+  .included-list li {
+    width: 100%;
+  }
+
+  .client-tags {
+    justify-content: center;
+  }
+
+  .stat-row {
+    text-align: left;
+  }
+}
